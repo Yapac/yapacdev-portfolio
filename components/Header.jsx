@@ -1,4 +1,4 @@
-import { poppins } from "@/app/fonts";
+import { poppins } from "@/utils/fonts";
 
 export default function Header() {
   return (

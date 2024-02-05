@@ -1,4 +1,4 @@
-import { fira_Sans_Condensed } from "@/app/fonts";
+import { fira_Sans_Condensed } from "@/utils/fonts";
 import Image from "next/image";
 
 export default function SkillCard({

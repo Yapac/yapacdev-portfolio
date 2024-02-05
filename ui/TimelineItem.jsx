@@ -1,4 +1,4 @@
-import { cardo, pathway_Gothic_One } from "@/app/fonts";
+import { cardo, pathway_Gothic_One } from "@/utils/fonts";
 import Image from "next/image";
 
 export default function TimelineItem({

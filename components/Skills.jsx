@@ -1,4 +1,4 @@
-import { cardo, open_Sans, pathway_Gothic_One } from "@/app/fonts";
+import { cardo, open_Sans, pathway_Gothic_One } from "@/utils/fonts";
 import { SkillCard } from "../ui";
 
 export default function Skills() {

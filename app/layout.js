@@ -1,7 +1,6 @@
+import { poppins } from "@/utils/fonts";
 import "./globals.css";
 import { Cursor, Header } from "@/components";
-import { poppins } from "./fonts";
-
 export const metadata = {
   title: "YapacDev - Building Beyond Bounderies",
   description:

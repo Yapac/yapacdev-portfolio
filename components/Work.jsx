@@ -1,7 +1,7 @@
 "use client";
 import { CarouselItem } from "@/ui";
 import "owl.carousel/dist/assets/owl.carousel.min.css";
-import { cardo, pathway_Gothic_One } from "@/app/fonts";
+import { cardo, pathway_Gothic_One } from "@/utils/fonts";
 
 var $ = require("jquery");
 if (typeof window !== "undefined") {
