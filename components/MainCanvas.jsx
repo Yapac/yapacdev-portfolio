@@ -32,7 +32,7 @@ const MainCanvas = () => {
             z: 128,
             y: 20,
           });
-        }, 750);
+        }, 50);
       },
       (itemUrl, itemsLoaded, itemsTotal) => {
         const progressRatio = itemsLoaded / itemsTotal;
