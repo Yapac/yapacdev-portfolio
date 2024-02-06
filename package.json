@@ -16,7 +16,8 @@
     "react-dom": "^18",
     "react-owl-carousel": "^2.3.3",
     "simplex-noise": "^4.0.1",
-    "three": "^0.144.0"
+    "three": "^0.144.0",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

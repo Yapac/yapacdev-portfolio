@@ -4,9 +4,12 @@ import * as THREE from "three";
 import { createNoise4D } from "simplex-noise";
 import gsap from "gsap";
 import $ from "jquery";
+import useStore, { getMenuState } from "@/store/store";
 
 const MainCanvas = () => {
   const mount = useRef(null);
+
+  const toggleMenu = useStore((state) => state.toggleMenu);
 
   // Sizes
   const sizes = useMemo(() => {
@@ -18,6 +21,8 @@ const MainCanvas = () => {
 
   const init = () => {
     // Loaders
+    if (document) {
+    }
     const loadingBar = document.querySelector(".loading-bar");
 
     const loadingManager = new THREE.LoadingManager(
@@ -169,28 +174,28 @@ const MainCanvas = () => {
      */
 
     const burgerMenu = (cameraPos) => {
-      $(".js-colorlib-nav-toggle").on("click", function (event) {
-        event.preventDefault();
+      const toggleButton = document.querySelector(".js-colorlib-nav-toggle");
 
-        if ($("body").hasClass("menu-show")) {
-          $("body").removeClass("menu-show");
-          $(".js-colorlib-nav-toggle").removeClass("show");
-          gsap.from(cameraPos, { duration: 1, delay: 0, z: -50 });
+      $(".js-colorlib-nav-toggle").on("click", function () {
+        if (document.body.classList.contains("menu-show")) {
+          document.body.classList.remove("menu-show");
+          // toggleButton.colorlib-nav-toggle.remove("show");
+          // gsap.from(cameraPos, { duration: 1, delay: 0, z: -50 });
         } else {
-          $("body").addClass("menu-show");
-          setTimeout(function () {
-            $(".js-colorlib-nav-toggle").addClass("show");
+          document.body.classList.add("menu-show");
+          setTimeout(() => {
+            // toggleButton.classList.add("show");
           }, 900);
         }
       });
 
-      $(".navig-link").on("click", function (event) {
-        event.preventDefault();
-        var $this = $(this);
-        $(".active").removeClass("active");
-        $(this).parent().addClass("active");
-        $("body").removeClass("menu-show");
-        $(".js-colorlib-nav-toggle").removeClass("show");
+      $(".navig-link").on("click", function () {
+        toggleMenu();
+        document.querySelector("li.active").classList.remove("active");
+        this.parentElement.classList.add("active");
+        document.body.classList.remove("menu-show");
+        // toggleButton.classList.remove("show");
+
         document.querySelector(this.getAttribute("href")).scrollIntoView({
           behavior: "smooth",
         });

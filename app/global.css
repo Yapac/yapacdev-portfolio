@@ -521,7 +521,7 @@ body.menu-show {
   display: table-cell;
   vertical-align: middle;
 }
-#main-nav .colorlib-nav-toggle {
+.colorlib-nav-toggle {
   position: absolute;
   top: 40px;
   right: 40px;
@@ -530,8 +530,8 @@ body.menu-show {
   width: 44px;
   line-height: 0;
   padding: 0 !important;
-  visibility: hidden;
-  opacity: 0;
+  visibility: visible;
+  opacity: 1;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -543,7 +543,7 @@ body.menu-show {
     transition: none;
   }
 }
-#main-nav .colorlib-nav-toggle i {
+.colorlib-nav-toggle i {
   top: 18px !important;
   left: 0 !important;
   margin: 0 !important;
@@ -551,12 +551,9 @@ body.menu-show {
   line-height: 0;
   text-indent: 0;
 }
-#main-nav .colorlib-nav-toggle.show {
-  visibility: visible;
-  opacity: 1;
-}
-#main-nav .colorlib-nav-toggle:hover i::before,
-#main-nav .colorlib-nav-toggle:hover i::after {
+
+.colorlib-nav-toggle:hover i::before,
+.colorlib-nav-toggle:hover i::after {
   content: "";
   transform: scale(1.1);
   background: #fff;
@@ -664,7 +661,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9;
+  z-index: 1055;
   margin: 0 auto;
 }
 @media (max-width: 767.98px) {
@@ -2949,7 +2946,6 @@ a:focus {
   font-variant: normal;
   font-family: "codropsicons";
   line-height: 1;
-  speak: none;
   -webkit-font-smoothing: antialiased;
 }
 

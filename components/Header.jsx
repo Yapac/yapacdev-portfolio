@@ -1,15 +1,10 @@
+import MenuButton from "@/ui/MenuButton";
 import { poppins } from "@/utils/fonts";
 
 export default function Header() {
   return (
     <>
       <nav id="main-nav" role="navigation" className="invisible">
-        <a
-          href="#"
-          className="js-colorlib-nav-toggle colorlib-nav-toggle hoverable active"
-        >
-          <i></i>
-        </a>
         <div className="js-fullheight colorlib-table">
           <div className="colorlib-table-cell js-fullheight">
             <div className="row no-gutters">
@@ -130,12 +125,7 @@ export default function Header() {
               YapacDev
             </a>
           </div>
-          <a
-            href="#"
-            className="js-colorlib-nav-toggle colorlib-nav-toggle hoverable"
-          >
-            <i className="align-middle"></i>
-          </a>
+          <MenuButton />
         </div>
       </header>
     </>
