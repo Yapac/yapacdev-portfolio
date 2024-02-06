@@ -555,7 +555,7 @@ body.menu-show {
 .colorlib-nav-toggle:hover i::before,
 .colorlib-nav-toggle:hover i::after {
   content: "";
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
   background: #fff;
   position: absolute;
   left: 0;
@@ -1111,7 +1111,6 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
 .demo-footer a {
   color: #999;
   display: inline-block;
-  font-family: var(--font-cardo);
 }
 
 /* SKILLS */
