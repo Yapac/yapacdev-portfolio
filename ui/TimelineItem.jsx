@@ -1,4 +1,4 @@
-import { cardo, pathway_Gothic_One } from "@/utils/fonts";
+import { cardo } from "@/libs/fonts";
 import Image from "next/image";
 
 export default function TimelineItem({
@@ -10,9 +10,7 @@ export default function TimelineItem({
 }) {
   return (
     <div
-      className={`timeline-item ${pathway_Gothic_One.className} ${
-        isActive ? "timeline-item--active" : ""
-      }`}
+      className={`timeline-item ${isActive ? "timeline-item--active" : ""}`}
       data-text={title}
     >
       <div className="timeline__content">
@@ -27,11 +25,7 @@ export default function TimelineItem({
             loading="lazy"
           />
         </div>
-        <h2
-          className={pathway_Gothic_One.className + " timeline__content-title"}
-        >
-          {year}
-        </h2>
+        <h2 className={"timeline__content-title"}>{year}</h2>
         <p className={cardo.className + " timeline__content-desc"}>
           {description}
         </p>

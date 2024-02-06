@@ -1,28 +1,13 @@
 "use client";
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { createNoise4D } from "simplex-noise";
 import gsap from "gsap";
-import $ from "jquery";
-import useStore, { getMenuState } from "@/store/store";
 
 const MainCanvas = () => {
   const mount = useRef(null);
 
-  const toggleMenu = useStore((state) => state.toggleMenu);
-
-  // Sizes
-  const sizes = useMemo(() => {
-    return {
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
-  }, []);
-
   const init = () => {
-    // Loaders
-    if (document) {
-    }
     const loadingBar = document.querySelector(".loading-bar");
 
     const loadingManager = new THREE.LoadingManager(
@@ -124,6 +109,12 @@ const MainCanvas = () => {
       scene.add(obj);
     }
 
+    // Sizes
+    const sizes = {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
+
     // Lights
     const initLights = () => {
       const r = 30;
@@ -177,15 +168,11 @@ const MainCanvas = () => {
       const toggleButton = document.querySelector(".js-colorlib-nav-toggle");
 
       $(".js-colorlib-nav-toggle").on("click", function () {
-        if (document.body.classList.contains("menu-show")) {
-          document.body.classList.remove("menu-show");
-          // toggleButton.colorlib-nav-toggle.remove("show");
-          // gsap.from(cameraPos, { duration: 1, delay: 0, z: -50 });
+        if (document.querySelector("#root").classList.contains("menu-show")) {
+          document.querySelector("#root").classList.remove("menu-show");
+          gsap.from(cameraPos, { duration: 1, delay: 0, z: -50 });
         } else {
-          document.body.classList.add("menu-show");
-          setTimeout(() => {
-            // toggleButton.classList.add("show");
-          }, 900);
+          document.querySelector("#root").classList.add("menu-show");
         }
       });
 
@@ -193,8 +180,7 @@ const MainCanvas = () => {
         toggleMenu();
         document.querySelector("li.active").classList.remove("active");
         this.parentElement.classList.add("active");
-        document.body.classList.remove("menu-show");
-        // toggleButton.classList.remove("show");
+        document.querySelector("#root").classList.remove("menu-show");
 
         document.querySelector(this.getAttribute("href")).scrollIntoView({
           behavior: "smooth",

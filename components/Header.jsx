@@ -1,5 +1,5 @@
+import { poppins } from "@/libs/fonts";
 import MenuButton from "@/ui/MenuButton";
-import { poppins } from "@/utils/fonts";
 
 export default function Header() {
   return (

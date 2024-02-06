@@ -1,4 +1,4 @@
-import { cardo, open_Sans, pathway_Gothic_One } from "@/utils/fonts";
+import { cardo, open_Sans } from "@/libs/fonts";
 import { SkillCard } from "../ui";
 
 export default function Skills() {
@@ -264,11 +264,7 @@ export default function Skills() {
         <h2 className={cardo.className + " timeline-header__title"}>
           My skills
         </h2>
-        <h3
-          className={
-            pathway_Gothic_One.className + " timeline-header__subtitle"
-          }
-        >
+        <h3 className={" timeline-header__subtitle"}>
           DISCOVER MY SUPERPOWERS
         </h3>
       </div>

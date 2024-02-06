@@ -1,7 +1,7 @@
 "use client";
 import { CarouselItem } from "@/ui";
 import "owl.carousel/dist/assets/owl.carousel.min.css";
-import { cardo, pathway_Gothic_One } from "@/utils/fonts";
+import { cardo } from "@/libs/fonts";
 
 var $ = require("jquery");
 if (typeof window !== "undefined") {
@@ -9,7 +9,9 @@ if (typeof window !== "undefined") {
 }
 
 import dynamic from "next/dynamic";
+
 const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
+  loading: () => <p>Loading</p>,
   ssr: false,
 });
 
@@ -133,11 +135,7 @@ export default function Work() {
     <section id="work">
       <div className="timeline-header">
         <h2 className={cardo.className + " timeline-header__title"}>My work</h2>
-        <h3
-          className={
-            pathway_Gothic_One.className + " timeline-header__subtitle"
-          }
-        >
+        <h3 className={" timeline-header__subtitle"}>
           DISCOVER SOME OF MY WORK
         </h3>
       </div>
@@ -145,6 +143,7 @@ export default function Work() {
       <div className="container">
         <div className="flex flex-wrap ">
           <div className="w-full">
+            {" "}
             <OwlCarousel
               className="featured-carousel owl-carousel"
               loop

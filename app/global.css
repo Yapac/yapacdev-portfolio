@@ -399,7 +399,7 @@ canvas {
 }
 .header-ready {
   transform: translateY(-100%);
-  animation: 1s ease-out 1s 1 slideInFromtop forwards;
+  animation: 1s ease-out 1s slideInFromtop forwards;
   transition: background-color ease 1s;
 }
 .scrolled {
@@ -456,12 +456,6 @@ body {
   line-height: 1.8;
   font-weight: normal;
 }
-body.menu-show {
-  overflow: hidden;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-}
 
 .img {
   background-size: cover;
@@ -470,7 +464,7 @@ body.menu-show {
 }
 
 #main-nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
@@ -521,30 +515,16 @@ body.menu-show {
   display: table-cell;
   vertical-align: middle;
 }
-.colorlib-nav-toggle {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  padding: 20px;
-  height: 44px;
-  width: 44px;
-  line-height: 0;
-  padding: 0 !important;
-  visibility: visible;
-  opacity: 1;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-}
+
 @media (prefers-reduced-motion: reduce) {
-  #main-nav .colorlib-nav-toggle {
+  .colorlib-nav-toggle {
     -webkit-transition: none;
     -o-transition: none;
     transition: none;
   }
 }
 .colorlib-nav-toggle i {
-  top: 18px !important;
+  top: 15px !important;
   left: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -709,13 +689,7 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
 }
 
 /* NAV */
-.colorlib-nav-toggle {
-  text-decoration: none;
-}
-.colorlib-nav-toggle.active i::before,
-.colorlib-nav-toggle.active i::after {
-  background: #000;
-}
+
 .colorlib-nav-toggle.dark.active i::before,
 .colorlib-nav-toggle.dark.active i::after {
   background: #000;
@@ -731,19 +705,16 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
   display: inline-block;
   width: 20px;
   height: 2px;
-  color: #000;
   font: bold 14px/0.4 Helvetica;
   text-transform: uppercase;
   text-indent: -55px;
+  color: #fff;
   background: #fff;
   -webkit-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-.menu-show .colorlib-nav-toggle i {
-  background: #fff;
-  color: #fff;
-}
+
 .colorlib-nav-toggle i::before,
 .colorlib-nav-toggle i::after {
   content: "";
@@ -756,10 +727,7 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
   -o-transition: 0.2s;
   transition: 0.2s;
 }
-.menu-show .colorlib-nav-toggle i::before,
-.menu-show .colorlib-nav-toggle i::after {
-  background: #fff;
-}
+
 @media (prefers-reduced-motion: reduce) {
   .colorlib-nav-toggle i::before,
   .colorlib-nav-toggle i::after {
@@ -832,14 +800,20 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
 
 .colorlib-nav-toggle {
   float: right;
-  line-height: 1.2;
-  /* z-index: 1003; */
+  line-height: 0;
+
   position: relative;
+  height: 44px;
+
   top: 0;
   right: 0;
   display: block;
   margin: 0 auto;
   margin-top: 0;
+
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 @media (max-width: 767.98px) {
   .colorlib-nav-toggle {
@@ -956,9 +930,9 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
 .timeline__content-title {
   position: relative;
 
-  font-weight: normal;
-  font-size: 66px;
-  margin: -10px 0 0 0;
+  font-weight: bold;
+  font-size: 42.5px;
+  margin: 5px 0 0 0;
   line-height: 1.2;
   transition: 0.4s;
   padding: 0 10px;
@@ -1005,7 +979,7 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
   width: 100%;
   position: absolute;
   color: rgba(255, 255, 255, 0.5);
-  font-size: 13px;
+  font-size: 11px;
   border-left: 2px solid rgba(255, 255, 255, 0.5);
   top: 70%;
   margin-top: -5px;
@@ -1036,7 +1010,7 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
   opacity: 1;
 }
 .timeline-item--active .timeline__content-title {
-  margin: -50px 0 20px 0;
+  margin: -25px 0 20px 0;
 }
 @media only screen and (max-width: 767px) {
   .timeline-item {
@@ -1090,14 +1064,15 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
   color: #fff;
   font-size: 46px;
   font-weight: normal;
+  letter-spacing: 2px;
   line-height: 1.2;
   margin: 0;
 }
 .timeline-header__subtitle {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 17px !important;
-  letter-spacing: 5px;
-  line-height: 1.2;
+  font-size: 13.5px !important;
+  letter-spacing: 4.5px;
+  line-height: 1.8;
   margin: 10px 0 0 0;
   font-weight: normal;
 }
@@ -1123,7 +1098,7 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
     padding: 95px 0px !important;
   }
 }
-#skills img {
+#cards img {
   max-height: 125px;
   margin: auto;
   display: inline-block;
@@ -1137,7 +1112,7 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
   margin: 0;
   font-weight: 400;
 }
-#skills h3 {
+#cards h3 {
   font-size: 18px;
 }
 #skills h5 {
@@ -1260,10 +1235,10 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
   background-color: #c71800;
 }
 .card--earth {
-  background: linear-gradient(0deg, #b0b197 10%, #b6fc45 100%);
+  background: linear-gradient(0deg, #cdd172 10%, #45fc6f 100%);
 }
 .card--earth .card__type {
-  background-color: #435e17;
+  background-color: #0f932e;
 }
 .card--psychic {
   background: linear-gradient(140deg, #ffa7f9 0%, #ff2cc3 39%, #ffe3a7 100%);
@@ -2264,7 +2239,7 @@ button.fs-continue,
 }
 
 .fs-fields > li .fs-radio-custom span label {
-  color: rgba(0, 0, 0, 0.4);
+  color: rgb(240, 240, 240);
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }

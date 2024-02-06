@@ -1,5 +1,5 @@
 "use client";
-import { cardo, pathway_Gothic_One } from "@/utils/fonts";
+import { cardo } from "@/libs/fonts";
 import { TimelineItem } from "../ui";
 import { useEffect, useState } from "react";
 
@@ -91,13 +91,7 @@ export default function Timeline() {
         <h2 className={cardo.className + " timeline-header__title"}>
           My story
         </h2>
-        <h3
-          className={
-            pathway_Gothic_One.className + " timeline-header__subtitle"
-          }
-        >
-          FROM BORN TO NOW
-        </h3>
+        <h3 className={" timeline-header__subtitle"}>FROM BORN TO NOW</h3>
       </div>
       <div className="timeline">
         {Data &&

@@ -248,15 +248,6 @@ export default function Contact() {
                     });
                   });
                 break;
-
-              /*
-					// for our custom select we would do something like:
-					case 'div' :
-						[].slice.call( fld.querySelectorAll( 'ul > li' ) ).forEach( function( inp ) {
-							inp.addEventListener( 'click', function(ev) { self._nextField(); } );
-						} );
-						break;
-					*/
             }
           }
         });
@@ -584,9 +575,13 @@ export default function Contact() {
       );
 
       if (scrollTop + window.innerHeight > documentHeight - 200) {
-        $("header").fadeOut();
+        const header = document.querySelector("header");
+
+        header.classList.add("fadeOut");
       } else {
-        $("header").fadeIn();
+        const header = document.querySelector("header");
+
+        header.classList.remove("fadeOut");
       }
     };
 

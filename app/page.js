@@ -1,13 +1,13 @@
-import {
-  LoadingScreen,
-  MainCanvas,
-  Contact,
-  Hero,
-  Skills,
-  Timeline,
-  Work,
-} from "@/components";
+import { LoadingScreen, Contact, Hero, Skills, Timeline } from "@/components";
 
+import dynamic from "next/dynamic";
+
+const MainCanvas = dynamic(() => import("@/components/MainCanvas"), {
+  ssr: false,
+});
+const Work = dynamic(() => import("@/components/Work"), {
+  ssr: false,
+});
 export default function Home() {
   return (
     <>

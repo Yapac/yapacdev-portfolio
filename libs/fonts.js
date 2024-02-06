@@ -1,7 +1,6 @@
 import {
   Poppins,
   Cardo,
-  Pathway_Gothic_One,
   Open_Sans,
   Fira_Sans_Condensed,
 } from "next/font/google";
@@ -13,10 +12,6 @@ export const poppins = Poppins({
 });
 
 export const cardo = Cardo({
-  subsets: ["latin"],
-  weight: ["400"],
-});
-export const pathway_Gothic_One = Pathway_Gothic_One({
   subsets: ["latin"],
   weight: ["400"],
 });
