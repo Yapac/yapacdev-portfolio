@@ -1390,12 +1390,6 @@ button:focus {
   color: #000;
 }
 
-.img {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
 @media (max-width: 991.98px) {
   .btn {
     display: block;
@@ -1403,33 +1397,24 @@ button:focus {
   }
 }
 
-.owl-carousel {
-  position: relative;
+.work-carousel .slick-slide {
+  opacity: 0.2;
+  transition: 0.3s opacity ease;
 }
-.owl-carousel .owl-stage-outer {
-  padding-top: 1em;
-  position: relative;
-}
-.owl-carousel .owl-item {
+.work-carousel .slick-slide.slick-active {
   opacity: 1;
 }
-.owl-carousel .owl-item.active {
-  opacity: 1;
-}
-.owl-carousel .owl-nav {
+
+.work-carousel .slick-prev,
+.work-carousel .slick-next {
+  display: inline-block;
   position: absolute;
   top: 50%;
-  left: 0;
-  right: 0;
-  display: inline-block;
-}
-.owl-carousel .owl-nav .owl-prev,
-.owl-carousel .owl-nav .owl-next {
-  position: absolute;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   margin-top: 0px;
+  z-index: 5;
 
   color: rgba(0, 0, 0, 0.2) !important;
   -webkit-transition: 0.7s;
@@ -1438,17 +1423,17 @@ button:focus {
   opacity: 1;
 }
 @media (prefers-reduced-motion: reduce) {
-  .owl-carousel .owl-nav .owl-prev,
-  .owl-carousel .owl-nav .owl-next {
+  .work-carousel .slick-prev,
+  .work-carousel .slick-next {
     -webkit-transition: none;
     -o-transition: none;
     transition: none;
   }
 }
-.owl-carousel .owl-nav .owl-prev p *,
-.owl-carousel .owl-nav .owl-prev p small,
-.owl-carousel .owl-nav .owl-next p *,
-.owl-carousel .owl-nav .owl-next p small {
+.work-carousel .slick-prev p *,
+.work-carousel .slick-prev p small,
+.work-carousel .slick-next p *,
+.work-carousel .slick-next p small {
   display: block;
   color: #000;
   font-weight: 700;
@@ -1459,63 +1444,63 @@ button:focus {
   transition: 0.3s;
 }
 @media (prefers-reduced-motion: reduce) {
-  .owl-carousel .owl-nav .owl-prev p *,
-  .owl-carousel .owl-nav .owl-prev p small,
-  .owl-carousel .owl-nav .owl-next p *,
-  .owl-carousel .owl-nav .owl-next p small {
+  .work-carousel .slick-prev p *,
+  .work-carousel .slick-prev p small,
+  .work-carousel .slick-next p *,
+  .work-carousel .slick-next p small {
     -webkit-transition: none;
     -o-transition: none;
     transition: none;
   }
 }
-.owl-carousel .owl-nav .owl-prev small,
-.owl-carousel .owl-nav .owl-next small {
+.work-carousel .slick-prev small,
+.work-carousel .slick-next small {
   text-transform: uppercase;
 }
-.owl-carousel .owl-nav .owl-prev svg,
-.owl-carousel .owl-nav .owl-next svg {
+.work-carousel .slick-prev svg,
+.work-carousel .slick-next svg {
   line-height: 0;
 }
-.owl-carousel .owl-nav .owl-prev svg:before,
-.owl-carousel .owl-nav .owl-next svg:before {
+.work-carousel .slick-prev svg:before,
+.work-carousel .slick-next svg:before {
   font-size: 40px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
 }
 @media (prefers-reduced-motion: reduce) {
-  .owl-carousel .owl-nav .owl-prev svg:before,
-  .owl-carousel .owl-nav .owl-next svg:before {
+  .work-carousel .slick-prev svg:before,
+  .work-carousel .slick-next svg:before {
     -webkit-transition: none;
     -o-transition: none;
     transition: none;
   }
 }
-.owl-carousel .owl-nav .owl-prev:hover small,
-.owl-carousel .owl-nav .owl-next:hover small {
+.work-carousel .slick-prev:hover small,
+.work-carousel .slick-next:hover small {
   color: #dddddd;
 }
-.owl-carousel .owl-nav .owl-prev:hover svg:before,
-.owl-carousel .owl-nav .owl-next:hover svg:before {
+.work-carousel .slick-prev:hover svg:before,
+.work-carousel .slick-next:hover svg:before {
   color: #dddddd;
 }
-.owl-carousel .owl-nav .owl-prev {
+.work-carousel .slick-prev {
   left: 0;
 }
-.owl-carousel .owl-nav .owl-next {
+.work-carousel .slick-next {
   right: 0;
 }
-.owl-carousel .owl-nav .owl-prev:hover * {
+.work-carousel .slick-prev:hover * {
   color: #dddddd;
 }
-.owl-carousel .owl-nav .owl-next:hover * {
+.work-carousel .slick-next:hover * {
   color: #dddddd;
 }
-.owl-carousel .owl-dots {
+.work-carousel .slick-dots {
   text-align: center;
   margin-top: 20px;
 }
-.owl-carousel .owl-dots .owl-dot {
+.work-carousel .slick-dots .slick-dot {
   width: 10px;
   height: 10px;
   margin: 5px;
@@ -1524,16 +1509,16 @@ button:focus {
   position: relative;
   border: 1px solid #000;
 }
-.owl-carousel .owl-dots .owl-dot:hover,
-.owl-carousel .owl-dots .owl-dot:focus {
+.work-carousel .slick-dots .slick-dot:hover,
+.work-carousel .slick-dots .slick-dot:focus {
   outline: none !important;
 }
-.owl-carousel .owl-dots .owl-dot.active {
+.work-carousel .slick-dots .slick-active .slick-dot {
   background: #dddddd;
   border: 1px solid #dddddd;
 }
 
-.owl-carousel.owl-drag .owl-item {
+.work-carousel.owl-drag .owl-item {
   -ms-touch-action: pan-y;
   touch-action: pan-y;
 }
@@ -1577,110 +1562,84 @@ button:focus {
   font-weight: 700;
 }
 
-/* ANIMATION */
-@-webkit-keyframes flipInX {
-  from {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 0;
-  }
+/* SLICK DEFAULT STYLE */
+/* Slider */
+.slick-slider {
+  position: relative;
 
-  40% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
+  display: block;
+  box-sizing: border-box;
 
-  60% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    opacity: 1;
-  }
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
-  80% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-  }
-
-  to {
-    -webkit-transform: perspective(400px);
-    transform: perspective(400px);
-  }
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
 }
 
-@keyframes flipInX {
-  from {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 0;
-  }
+.slick-list {
+  position: relative;
 
-  40% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
+  display: block;
+  overflow: hidden;
 
-  60% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    opacity: 1;
-  }
-
-  80% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-  }
-
-  to {
-    -webkit-transform: perspective(400px);
-    transform: perspective(400px);
-  }
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
 }
 
-.flipInX {
-  -webkit-backface-visibility: visible !important;
-  backface-visibility: visible !important;
-  -webkit-animation-name: flipInX;
-  animation-name: flipInX;
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
-@-webkit-keyframes slideOutDown {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
 
-  to {
-    visibility: hidden;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after {
+  display: table;
+
+  content: "";
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
 }
 
-@keyframes slideOutDown {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    visibility: hidden;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
 }
 
-.slideOutDown {
-  -webkit-animation-name: slideOutDown;
-  animation-name: slideOutDown;
+.slick-slide.dragging img {
+  pointer-events: none;
 }
+
 /* view project button */
 
 .explore a,

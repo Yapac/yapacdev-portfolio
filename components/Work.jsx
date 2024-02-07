@@ -1,19 +1,8 @@
 "use client";
+
+import Slider from "react-slick";
 import { CarouselItem } from "@/ui";
-import "owl.carousel/dist/assets/owl.carousel.min.css";
 import { cardo } from "@/libs/fonts";
-
-var $ = require("jquery");
-if (typeof window !== "undefined") {
-  window.$ = window.jQuery = require("jquery");
-}
-
-import dynamic from "next/dynamic";
-
-const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
-  loading: () => <p>Loading</p>,
-  ssr: false,
-});
 
 export default function Work() {
   const Data = [
@@ -131,6 +120,58 @@ export default function Work() {
       buttonText: "View app",
     },
   ];
+
+  function NextArrow(props) {
+    const { className, onClick } = props;
+    return (
+      <button
+        type="button"
+        role="presentation"
+        className={className + " hoverable"}
+        onClick={onClick}
+      >
+        <p>
+          <small>Next</small>
+          <svg viewBox="0 0 512 512">
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="24"
+              d="M268 112l144 144-144 144M392 256H100"
+            />
+          </svg>
+        </p>
+      </button>
+    );
+  }
+
+  function PrevArrow(props) {
+    const { className, onClick } = props;
+    return (
+      <button
+        type="button"
+        role="presentation"
+        className={className + " hoverable"}
+        onClick={onClick}
+      >
+        <p>
+          <small>Prev</small>
+          <svg viewBox="0 0 512 512">
+            <path
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="24"
+              d="M244 400L100 256l144-144M120 256h292"
+            />
+          </svg>
+        </p>
+      </button>
+    );
+  }
   return (
     <section id="work">
       <div className="timeline-header">
@@ -141,28 +182,35 @@ export default function Work() {
       </div>
 
       <div className="container">
-        <div className="flex flex-wrap ">
+        <div className="flex flex-wrap">
           <div className="w-full">
-            {" "}
-            <OwlCarousel
-              className="featured-carousel owl-carousel"
-              loop
-              margin={30}
-              animateIn="flipInX"
-              animateOut="slideOutDown"
-              nav
-              dots
-              items={1}
-              navText={[
-                "<p class='hoverable'><small>Prev</small><svg viewBox='0 0 512 512'><path fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='24' d='M244 400L100 256l144-144M120 256h292'/></svg></p>",
-                "<p class='hoverable'><small>Next</small><svg viewBox='0 0 512 512'><path fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='24' d='M268 112l144 144-144 144M392 256H100'/></svg></p>",
-              ]}
+            <Slider
+              className="work-carousel"
+              dots={true}
+              infinite={true}
+              // margin={30}
+              // animateIn="flipInX"
+              // animateOut="slideOutDown"
+              slidesToShow={1}
+              slidesToScroll={1}
+              nextArrow={<NextArrow />}
+              prevArrow={<PrevArrow />}
+              appendDots={(dots) => (
+                <div>
+                  <ul className="flex justify-center"> {dots} </ul>
+                </div>
+              )}
+              customPaging={(i) => (
+                <button role="button" class="slick-dot">
+                  <span></span>
+                </button>
+              )}
             >
               {Data &&
                 Data.map((item) => {
                   return <CarouselItem {...item} key={item.id} />;
                 })}
-            </OwlCarousel>
+            </Slider>
           </div>
         </div>
       </div>

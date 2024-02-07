@@ -3,10 +3,17 @@ import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { createNoise4D } from "simplex-noise";
 import gsap from "gsap";
+import useStore from "@/store/store";
+
+var $ = require("jquery");
+if (typeof window !== "undefined") {
+  window.$ = window.jQuery = require("jquery");
+}
 
 const MainCanvas = () => {
   const mount = useRef(null);
 
+  const toggleMenu = useStore((state) => state.toggleMenu);
   const init = () => {
     const loadingBar = document.querySelector(".loading-bar");
 
