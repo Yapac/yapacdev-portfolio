@@ -108,7 +108,7 @@ canvas {
 .title {
   display: inline;
   opacity: 0;
-  animation: fadeUp 500ms 1.75s forwards;
+  animation: fadeUp 500ms 1.5s forwards;
   line-height: 1.2;
   font-size: 6vw;
   font-weight: 700;
@@ -123,7 +123,7 @@ canvas {
   font-weight: 700;
   line-height: 1.2;
 
-  animation: fadeUp 500ms 2.75s forwards;
+  animation: fadeUp 500ms 2.5s forwards;
   margin-bottom: 0.3em;
   margin-top: 0.5rem;
 }
@@ -138,7 +138,7 @@ canvas {
 
 .button-animation {
   opacity: 0;
-  animation: fadeUp 500ms 4.25s forwards;
+  animation: fadeUp 500ms 4s forwards;
 }
 .title::before {
   white-space: nowrap;
@@ -151,7 +151,7 @@ canvas {
   -webkit-text-stroke: 0vw gray;
 
   overflow: hidden;
-  animation: fullIt 5s linear 2000ms forwards;
+  animation: fullIt 5s linear 1750ms forwards;
 }
 
 .slogan::before {
@@ -165,7 +165,7 @@ canvas {
   color: #afafaf;
   -webkit-text-stroke: 0vw gray;
   overflow: hidden;
-  animation: fullIt 3s linear 4000ms forwards;
+  animation: fullIt 3s linear 3750ms forwards;
 }
 
 @keyframes fullIt {
@@ -1778,7 +1778,7 @@ textarea {
 /*  */
 
 /* Main form wrapper */
-.fs-form-wrap {
+#fs-form-wrap {
   position: relative;
   width: 100%;
   height: 100%;
@@ -1786,7 +1786,7 @@ textarea {
   background-color: #3b3f45ed;
 }
 
-.overview .fs-form-wrap {
+.overview #fs-form-wrap {
   height: auto;
   overflow: hidden;
 }
@@ -1910,18 +1910,14 @@ button.fs-continue,
 }
 
 /* Some general styles */
-.fs-form-wrap button {
-  border: none;
-  background: none;
-}
 
-.fs-form-wrap button[disabled] {
+#fs-form-wrap button[disabled] {
   opacity: 0.3;
   pointer-events: none;
 }
 
-.fs-form-wrap input:focus,
-.fs-form-wrap button:focus {
+#fs-form-wrap input:focus,
+#fs-form-wrap button:focus {
   outline: none;
 }
 
@@ -1939,10 +1935,6 @@ button.fs-continue,
   list-style: none;
 }
 
-/* .fs-form-overview ol {
-  max-width: ;
-} */
-
 .fs-fields > li {
   position: relative;
   z-index: 1;
@@ -1950,11 +1942,6 @@ button.fs-continue,
   padding: 0;
   border: none;
 }
-
-.fs-fields > li:hover {
-  z-index: 999;
-}
-
 .js .fs-form-full .fs-fields > li {
   position: absolute;
   width: 100%;
@@ -2644,7 +2631,7 @@ input[type="text"]::-ms-clear {
     min-height: 500px;
   }
 
-  .fs-form-wrap {
+  #fs-form-wrap {
     font-size: 70%;
   }
 
@@ -2737,6 +2724,10 @@ input[type="text"]::-ms-clear {
   background-color: #3b3f45;
   color: #fff;
 }
+.icon-inner {
+  width: 25px;
+}
+
 .icon-inner svg {
   fill: currentColor;
 }
@@ -3156,7 +3147,4 @@ DEMO
 
 .popup p:nth-child(n + 2) {
   margin-top: 1rem;
-}
-.icon-inner {
-  width: 22px;
 }

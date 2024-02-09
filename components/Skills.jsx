@@ -3,27 +3,12 @@ import { SkillCard } from "../ui";
 
 export default function Skills() {
   const Data = [
-    // {
-    //   id: 0,
-    //   cardType: "normal",
-    //   title: "HTML",
-    //   type: "normal",
-    //   imageLink:
-    //     "https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg",
-    //   HP: "95",
-    //   Attack: "65",
-    //   Defense: "70",
-    //   Speed: "55",
-    //   Ability: "Build",
-    //   HiddenAbility: "Anticipation",
-    // },
     {
       id: 1,
       cardType: "water",
       title: "CSS",
       type: "water",
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg",
+      imageLink: "/skillsIcons/CSS3_logo.svg",
       HP: "130",
       Attack: "65",
       Defense: "60",
@@ -36,8 +21,7 @@ export default function Skills() {
       cardType: "electric",
       title: "Javascript",
       type: "electric",
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/d/dc/Javascript-shield.png",
+      imageLink: "/skillsIcons/Javascript-shield.webp",
       HP: "85",
       Attack: "95",
       Defense: "80",
@@ -50,8 +34,7 @@ export default function Skills() {
       cardType: "psychic",
       title: "Bootstrap",
       type: "psychic",
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg",
+      imageLink: "/skillsIcons/Bootstrap_logo.svg",
       HP: "65",
       Attack: "130",
       Defense: "60",
@@ -64,8 +47,7 @@ export default function Skills() {
       cardType: "wind",
       title: "React.js",
       type: "atom",
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+      imageLink: "/skillsIcons/React-icon.svg",
       HP: "105",
       Attack: "90",
       Defense: "95",
@@ -78,8 +60,7 @@ export default function Skills() {
       cardType: "ice",
       title: "PHP",
       type: "snow",
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
+      imageLink: "/skillsIcons/PHP-logo.svg",
       HP: "85",
       Attack: "105",
       Defense: "90",
@@ -93,8 +74,7 @@ export default function Skills() {
       cardType: "water",
       title: "WORDPRESS",
       type: "ice",
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/9/93/Wordpress_Blue_logo.png",
+      imageLink: "/skillsIcons/Wordpress_logo.webp",
       HP: "65",
       Attack: "60",
       Defense: "110",
@@ -107,8 +87,7 @@ export default function Skills() {
       cardType: "fairy",
       title: "THREE.JS",
       type: "fairy",
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/3/3f/Three.js_Icon.svg",
+      imageLink: "/skillsIcons/Three.js_Icon.svg",
       HP: "95",
       Attack: "105",
       Defense: "90",
@@ -121,8 +100,7 @@ export default function Skills() {
       cardType: "grass",
       title: "C#",
       type: "grass",
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/0/0d/C_Sharp_wordmark.svg",
+      imageLink: "/skillsIcons/C_Sharp_wordmark.svg",
       HP: "65",
       Attack: "110",
       Defense: "130",
@@ -135,8 +113,7 @@ export default function Skills() {
       cardType: "earth",
       title: "MERN",
       type: "earth",
-      imageLink:
-        "https://www.mangoitsolutions.com/wp-content/uploads/2022/01/becomeamernstackdeveloper-mobile-300x279.png",
+      imageLink: "/skillsIcons/Mernstack.webp",
       HP: "125",
       Attack: "130",
       Defense: "105",
@@ -149,8 +126,7 @@ export default function Skills() {
       cardType: "dark",
       title: "Android studio",
       type: "dark",
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/9/95/Android_Studio_Icon_3.6.svg",
+      imageLink: "/skillsIcons/Android_Studio_Icon_3.6.svg",
       HP: "105",
       Attack: "95",
       Defense: "110",
@@ -163,8 +139,7 @@ export default function Skills() {
       cardType: "ice",
       title: "UNITY",
       type: "shadow",
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/1/19/Unity_Technologies_logo.svg",
+      imageLink: "/skillsIcons/Unity_Technologies_logo.svg",
       HP: "85",
       Attack: "125",
       Defense: "80",
@@ -178,8 +153,7 @@ export default function Skills() {
       cardType: "water",
       title: "MY SQL",
       type: "glass",
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg",
+      imageLink: "/skillsIcons/MySQL_textlogo.svg",
       HP: "95",
       Attack: "65",
       Defense: "70",
@@ -192,8 +166,7 @@ export default function Skills() {
       cardType: "wind",
       title: "Photoshop",
       type: "wind",
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg",
+      imageLink: "/skillsIcons/Adobe_Photoshop_CC_icon.svg",
       HP: "85",
       Attack: "110",
       Defense: "130",
@@ -206,8 +179,7 @@ export default function Skills() {
       cardType: "normal",
       title: "Illustrator",
       type: "magic",
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg",
+      imageLink: "/skillsIcons/Adobe_Illustrator_CC_icon.svg",
       HP: "65",
       Attack: "110",
       Defense: "130",
@@ -220,8 +192,7 @@ export default function Skills() {
       cardType: "water",
       title: "Premier pro",
       type: "storm",
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg",
+      imageLink: "/skillsIcons/Adobe_Premiere_Pro_CC_icon.svg",
       HP: "75",
       Attack: "110",
       Defense: "120",
@@ -234,8 +205,7 @@ export default function Skills() {
       cardType: "electric",
       title: "Blender",
       type: "electric",
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/0/0c/Blender_logo_no_text.svg",
+      imageLink: "/skillsIcons/Blender_logo_no_text.svg",
       HP: "65",
       Attack: "110",
       Defense: "130",
@@ -248,8 +218,7 @@ export default function Skills() {
       cardType: "dark",
       title: "Framer",
       type: "dark",
-      imageLink:
-        "https://cdn.icon-icons.com/icons2/2699/PNG/512/framer_logo_icon_169149.png",
+      imageLink: "/skillsIcons/framer_logo.webp",
       HP: "65",
       Attack: "110",
       Defense: "95",

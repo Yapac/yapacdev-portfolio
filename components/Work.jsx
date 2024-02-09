@@ -126,7 +126,7 @@ export default function Work() {
     return (
       <button
         type="button"
-        role="navigation"
+        role="button"
         aria-label="Next arrow"
         className={className + " hoverable"}
         onClick={onClick}
@@ -153,7 +153,7 @@ export default function Work() {
     return (
       <button
         type="button"
-        role="navigation"
+        role="button"
         aria-label="Prev arrow"
         className={className + " hoverable"}
         onClick={onClick}

@@ -16,82 +16,64 @@ export default function Contact() {
      * http://www.codrops.com
      *
      */
-    (function (window) {
-      "use strict";
 
-      var support = { animations: true },
-        animEndEventNames = {
-          WebkitAnimation: "webkitAnimationEnd",
-          OAnimation: "oAnimationEnd",
-          msAnimation: "MSAnimationEnd",
-          animation: "animationend",
-        },
-        // animation end event name
-        animEndEventName = animEndEventNames.animation;
+    var support = { animations: true },
+      animEndEventNames = {
+        WebkitAnimation: "webkitAnimationEnd",
+        OAnimation: "oAnimationEnd",
+        msAnimation: "MSAnimationEnd",
+        animation: "animationend",
+      },
+      // animation end event name
+      animEndEventName = animEndEventNames.animation;
 
-      /**
-       * extend obj function
-       */
-      function extend(a, b) {
-        for (var key in b) {
-          if (b.hasOwnProperty(key)) {
-            a[key] = b[key];
-          }
+    /**
+     * extend obj function
+     */
+    function extend(a, b) {
+      for (var key in b) {
+        if (b.hasOwnProperty(key)) {
+          a[key] = b[key];
         }
-        return a;
       }
+      return a;
+    }
 
-      /**
-       * createElement function
-       * creates an element with tag = tag, className = opt.cName, innerHTML = opt.inner and appends it to opt.appendTo
-       */
-      function createElement(tag, opt) {
-        var el = document.createElement(tag);
-        if (opt) {
-          if (opt.cName) {
-            el.className = opt.cName;
-          }
-          if (opt.inner) {
-            el.innerHTML = opt.inner;
-          }
-          if (opt.appendTo) {
-            opt.appendTo.appendChild(el);
-          }
+    /**
+     * createElement function
+     * creates an element with tag = tag, className = opt.cName, innerHTML = opt.inner and appends it to opt.appendTo
+     */
+    function createElement(tag, opt) {
+      var el = document.createElement(tag);
+      if (opt) {
+        if (opt.cName) {
+          el.className = opt.cName;
         }
-        return el;
+        if (opt.inner) {
+          el.innerHTML = opt.inner;
+        }
+        if (opt.appendTo) {
+          opt.appendTo.appendChild(el);
+        }
       }
+      return el;
+    }
 
-      /**
-       * FForm function
-       */
-      function FForm(el, options) {
+    /**
+     * FForm function
+     */
+    class FForm {
+      constructor(el, options) {
         this.el = el;
         this.options = extend({}, this.options);
         extend(this.options, options);
         this._init();
       }
-
-      /**
-       * FForm options
-       */
-      FForm.prototype.options = {
-        // show progress bar
-        ctrlProgress: true,
-        // show navigation dots
-        ctrlNavDots: true,
-        // show [current field]/[total fields] status
-        ctrlNavPosition: true,
-        // reached the review and submit step
-        onReview: function () {
-          return false;
-        },
-      };
-
       /**
        * init function
        * initialize and cache some vars
        */
-      FForm.prototype._init = function () {
+      _init() {
         // the form element
         this.formEl = this.el.querySelector("form");
 
@@ -107,9 +89,6 @@ export default function Contact() {
         // total fields
         this.fieldsCount = this.fields.length;
 
-        // show first field
-        this.fields[this.current].classList.add("fs-current");
-
         // create/add controls
         this._addControls();
 
@@ -118,13 +97,12 @@ export default function Contact() {
 
         // init events
         this._initEvents();
-      };
-
+      }
       /**
        * addControls function
        * create and insert the structure for the controls
        */
-      FForm.prototype._addControls = function () {
+      _addControls() {
         // main controls wrapper
         this.ctrls = createElement("div", {
           cName: "fs-controls",
@@ -188,24 +166,22 @@ export default function Contact() {
           });
           this._showCtrl(this.ctrlProgress);
         }
-      };
-
+      }
       /**
        * addErrorMsg function
        * create and insert the structure for the error message
        */
-      FForm.prototype._addErrorMsg = function () {
+      _addErrorMsg() {
         // error message
         this.msgError = createElement("span", {
           cName: "fs-message-error",
           appendTo: this.el,
         });
-      };
-
+      }
       /**
        * init events
        */
-      FForm.prototype._initEvents = function () {
+      _initEvents() {
         var self = this;
 
         // show next field
@@ -265,13 +241,12 @@ export default function Contact() {
             }
           }
         });
-      };
-
+      }
       /**
        * nextField function
        * jumps to the next field
        */
-      FForm.prototype._nextField = function (backto) {
+      _nextField(backto) {
         if (this.isLastStep || !this._validade() || this.isAnimating) {
           return false;
         }
@@ -344,7 +319,6 @@ export default function Contact() {
               self._hideCtrl(self.ctrlContinue);
               self._hideCtrl(self.ctrlFldStatus);
               // replace class fs-form-full with fs-form-overview
-
               self.formEl.classList.remove("fs-form-full");
 
               self.formEl.classList.add("fs-form-overview", "fs-show");
@@ -384,24 +358,22 @@ export default function Contact() {
         } else {
           onEndAnimationFn();
         }
-      };
-
+      }
       /**
        * showField function
        * jumps to the field at position pos
        */
-      FForm.prototype._showField = function (pos) {
+      _showField(pos) {
         if (pos === this.current || pos < 0 || pos > this.fieldsCount - 1) {
           return false;
         }
         this._nextField(pos);
-      };
-
+      }
       /**
        * updateFieldNumber function
        * changes the current field number
        */
-      FForm.prototype._updateFieldNumber = function () {
+      _updateFieldNumber() {
         if (this.options.ctrlNavPosition) {
           // first, create next field number placeholder
           this.ctrlFldStatusNew = document.createElement("span");
@@ -419,24 +391,22 @@ export default function Contact() {
             );
           }, 25);
         }
-      };
-
+      }
       /**
        * progress function
        * updates the progress bar by setting its width
        */
-      FForm.prototype._progress = function () {
+      _progress() {
         if (this.options.ctrlProgress) {
           this.ctrlProgress.style.width =
             this.current * (100 / this.fieldsCount) + "%";
         }
-      };
-
+      }
       /**
        * updateNav function
        * updates the navigation dots
        */
-      FForm.prototype._updateNav = function () {
+      _updateNav() {
         if (this.options.ctrlNavDots) {
           this.ctrlNav
             .querySelector("button.fs-dot-current")
@@ -444,26 +414,23 @@ export default function Contact() {
           this.ctrlNavDots[this.current].classList.add("fs-dot-current");
           this.ctrlNavDots[this.current].disabled = false;
         }
-      };
-
+      }
       /**
        * showCtrl function
        * shows a control
        */
-      FForm.prototype._showCtrl = function (ctrl) {
+      _showCtrl(ctrl) {
         ctrl.classList.add("fs-show");
-      };
-
+      }
       /**
        * hideCtrl function
        * hides a control
        */
-      FForm.prototype._hideCtrl = function (ctrl) {
+      _hideCtrl(ctrl) {
         ctrl.classList.remove("fs-show");
-      };
-
+      }
       // TODO: this is a very basic validation function. Only checks for required fields..
-      FForm.prototype._validade = function () {
+      _validade() {
         var fld = this.fields[this.current],
           input =
             fld.querySelector("input[required]") ||
@@ -512,10 +479,9 @@ export default function Contact() {
         }
 
         return true;
-      };
-
+      }
       // TODO
-      FForm.prototype._showError = function (err) {
+      _showError(err) {
         var message = "";
         switch (err) {
           case "NOVAL":
@@ -528,39 +494,37 @@ export default function Contact() {
         }
         this.msgError.innerHTML = message;
         this._showCtrl(this.msgError);
-      };
-
+      }
       // clears/hides the current error message
-      FForm.prototype._clearError = function () {
+      _clearError() {
         this._hideCtrl(this.msgError);
-      };
+      }
+    }
 
-      // add to global namespace
-      window.FForm = FForm;
-    })(window);
+    /**
+     * FForm options
+     */
+    FForm.prototype.options = {
+      // show progress bar
+      ctrlProgress: true,
+      // show navigation dots
+      ctrlNavDots: true,
+      // show [current field]/[total fields] status
+      ctrlNavPosition: true,
+      // reached the review and submit step
+      onReview: function () {
+        return false;
+      },
+    };
 
-    (function () {
-      var formWrap = document.getElementById("fs-form-wrap");
+    // Intiating The form
+    var formWrap = document.getElementById("fs-form-wrap");
 
-      [].slice
-        .call(document.querySelectorAll("select.cs-select"))
-        .forEach(function (el) {
-          new SelectFx(el, {
-            stickyPlaceholder: false,
-            onChange: function (val) {
-              document.querySelector(
-                "span.cs-placeholder"
-              ).style.backgroundColor = val;
-            },
-          });
-        });
-
-      new FForm(formWrap, {
-        onReview: function () {
-          document.body.classList.add("overview");
-        },
-      });
-    })();
+    new FForm(formWrap, {
+      onReview: function () {
+        document.body.classList.add("overview");
+      },
+    });
 
     /* HEADER DISAPEARING WHEN GETTING TO THE CONTACT FORM */
     const handleScroll = () => {
@@ -631,7 +595,7 @@ export default function Contact() {
           </svg>
         </div>
       </div>
-      <div className="fs-form-wrap" id="fs-form-wrap">
+      <div id="fs-form-wrap">
         <p className="copyright-text">Copyright © YapacDev</p>
         <div className="fs-title">
           <h3>Let's talk</h3>
@@ -720,7 +684,7 @@ export default function Contact() {
 
           {/* <!-- Form --> */}
           <ol className="fs-fields">
-            <li>
+            <li className="fs-current">
               <label className="fs-field-label fs-anim-upper" htmlFor="q1">
                 What's your name?
               </label>
