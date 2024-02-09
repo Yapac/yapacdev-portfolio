@@ -10,11 +10,15 @@ const Cursor = () => {
       let hoverables = document.querySelectorAll(".hoverable");
       let hoverablesRect = document.querySelectorAll(".hoverable-rect");
 
-      const handleMouseOver = () => {
+      const handleMouseOver = (e) => {
+        e.preventDefault();
+
         mountRef.current.classList.add("link-grow");
       };
 
-      const handleMouseLeave = () => {
+      const handleMouseLeave = (e) => {
+        e.preventDefault();
+
         mountRef.current.classList.remove("link-grow");
       };
 
@@ -24,10 +28,12 @@ const Cursor = () => {
       });
 
       hoverablesRect.forEach((hoverable) => {
-        hoverable.addEventListener("mouseover", () => {
+        hoverable.addEventListener("mouseover", (e) => {
+          e.preventDefault();
           mountRef.current.classList.add("link-grow-rect");
         });
-        hoverable.addEventListener("mouseleave", () => {
+        hoverable.addEventListener("mouseleave", (e) => {
+          e.preventDefault();
           mountRef.current.classList.remove("link-grow-rect");
         });
       });

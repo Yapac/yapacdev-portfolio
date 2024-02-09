@@ -149,8 +149,8 @@ export default function Contact() {
           for (var i = 0; i < this.fieldsCount; ++i) {
             dots +=
               i === this.current
-                ? '<button class="fs-dot-current"></button>'
-                : "<button disabled></button>";
+                ? '<button aria-label="contact Navigation" class="fs-dot-current"></button>'
+                : '<button aria-label="contact Navigation" disabled></button>';
           }
           this.ctrlNav.innerHTML = dots;
           this._showCtrl(this.ctrlNav);
@@ -641,6 +641,7 @@ export default function Contact() {
               className="codrops-icon"
               href="https://www.instagram.com/yapacdev/"
               target="_blank"
+              aria-label="Yapacdev's instagram account"
             >
               <div className="icon-inner md hydrated">
                 <svg
@@ -658,6 +659,7 @@ export default function Contact() {
               className="codrops-icon"
               href="https://wa.me/212656034248?text=Heey%2CIm+from+the+website%21"
               target="_blank"
+              aria-label="Yapacdev's whatsapp number"
             >
               <div className="icon-inner  md hydrated">
                 <svg
@@ -678,6 +680,7 @@ export default function Contact() {
               className="codrops-icon"
               href="https://www.linkedin.com/in/yapacdev/"
               target="_blank"
+              aria-label="Yapacdev's linkedin account"
             >
               <div className="icon-inner md hydrated">
                 <svg
@@ -780,7 +783,7 @@ export default function Contact() {
                     htmlFor="q3b"
                     className="radio"
                     style={{
-                      backgroundImage: `url(images/info.png)`,
+                      backgroundImage: `url(images/info.webp)`,
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "85%",
                       backgroundPosition: "50% 0%",
@@ -801,7 +804,7 @@ export default function Contact() {
                     htmlFor="q3c"
                     className="radio"
                     style={{
-                      backgroundImage: `url(images/job-search.png)`,
+                      backgroundImage: `url(images/job-search.webp)`,
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "85%",
                       backgroundPosition: "50% 0%",
@@ -822,7 +825,7 @@ export default function Contact() {
                     htmlFor="q3a"
                     className="radio"
                     style={{
-                      backgroundImage: `url(images/more.png)`,
+                      backgroundImage: `url(images/more.webp)`,
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "85%",
                       backgroundPosition: "50% 0%",

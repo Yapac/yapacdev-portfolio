@@ -1,15 +1,26 @@
 import {
   LoadingScreen,
-  Contact,
+  // Contact,
   Hero,
-  Skills,
-  Timeline,
-  Work,
+  MainCanvas,
+  // Skills,
+  // Timeline,
+  // Work,
 } from "@/components";
 
 import dynamic from "next/dynamic";
 
-const MainCanvas = dynamic(() => import("@/components/MainCanvas"), {
+// Dynamically import the other components
+const Contact = dynamic(() => import("@/components/Contact"), {
+  ssr: false,
+});
+const Skills = dynamic(() => import("@/components/Skills"), {
+  ssr: false,
+});
+const Timeline = dynamic(() => import("@/components/Timeline"), {
+  ssr: false,
+});
+const Work = dynamic(() => import("@/components/Work"), {
   ssr: false,
 });
 

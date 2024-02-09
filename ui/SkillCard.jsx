@@ -24,6 +24,7 @@ export default function SkillCard({
             sizes="80vw"
             alt={"Icon of " + title}
             loading="lazy"
+            placeholder="empty"
             style={{ objectFit: "contain", imgStyle }}
           />
         </div>
@@ -61,14 +62,14 @@ export default function SkillCard({
         </table>
 
         <div className="card__abilities">
-          <h5 className="card__ability">
+          <p className="card__ability">
             <span className="card__label">Ability</span>
             {Ability}
-          </h5>
-          <h5 className="card__ability">
+          </p>
+          <p className="card__ability">
             <span className="card__label">Hidden Ability</span>
             {HiddenAbility}
-          </h5>
+          </p>
         </div>
       </figcaption>
     </figure>

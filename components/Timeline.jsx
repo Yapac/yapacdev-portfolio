@@ -12,7 +12,7 @@ export default function Timeline() {
       id: 0,
       title: "CAME TO LIFE!",
       year: "2002",
-      image: "/images/new-born.jpg",
+      image: "/images/new-born.webp",
       description:
         'I was born on February 28, 2002 ( probably on a shiny morning ) in Morocco and I was named "Yassine El atlassi".',
     },
@@ -20,7 +20,7 @@ export default function Timeline() {
       id: 1,
       title: "CHILDHOOD INTERESTS",
       year: "2008",
-      image: "/images/kid-playing.jpg",
+      image: "/images/kid-playing.webp",
       description:
         "In my childhood, I was interested in that games that depend on problem-solving and fast thinking, I was in love with the feelings that come to you every time you solve a problem or you discover something new.",
     },
@@ -28,7 +28,7 @@ export default function Timeline() {
       id: 2,
       title: "DISCOVERING COMPUTER",
       year: "2010",
-      image: "/images/old-pc.jpg",
+      image: "/images/old-pc.webp",
       description:
         "By this time I got my 1st pc interaction, going into this world of creations starting with games and ending in the wide world of the internet made me in love with this machine.",
     },
@@ -36,7 +36,7 @@ export default function Timeline() {
       id: 3,
       title: "HIGH SCHOOL",
       year: "2016",
-      image: "/images/books.jpg",
+      image: "/images/books.webp",
       description:
         "During these years of school, I fell in love with math and physics, because they had equation solving in them and I loved this aspect I was interested in structured solving, and at the same time I loved arts and design as well.",
     },
@@ -44,7 +44,7 @@ export default function Timeline() {
       id: 4,
       title: "ACADEMIC BACKGROUND",
       year: "2019",
-      image: "/images/dev-pc.jpg",
+      image: "/images/dev-pc.webp",
       description:
         "After all these years, all the interests and all the influence surely grow a big desire for programming so as my main path I chose to be a software engineer and also study design/ user experience.",
     },
@@ -52,7 +52,7 @@ export default function Timeline() {
       id: 5,
       title: "TODAY",
       year: "2022",
-      image: "/images/go-up.jpg",
+      image: "/images/go-up.webp",
       description:
         "Today, I am always trying to learn new things by searching and reading online courses, I always aim for the best technologies to get the best results. Pushing the barrier is always an option.",
     },

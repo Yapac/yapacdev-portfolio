@@ -3,18 +3,11 @@ import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { createNoise4D } from "simplex-noise";
 import gsap from "gsap";
-import useStore from "@/store/store";
-
-var $ = require("jquery");
-if (typeof window !== "undefined") {
-  window.$ = window.jQuery = require("jquery");
-}
 
 const MainCanvas = () => {
   const mount = useRef(null);
 
-  const toggleMenu = useStore((state) => state.toggleMenu);
-  const init = () => {
+  useEffect(() => {
     const loadingBar = document.querySelector(".loading-bar");
 
     const loadingManager = new THREE.LoadingManager(
@@ -22,10 +15,11 @@ const MainCanvas = () => {
         setTimeout(() => {
           window.scrollTo(0, 0);
 
-          document.querySelector("#home").classList.remove("hidden");
+          document.querySelector(".holder-hero").classList.remove("hidden");
 
-          document.querySelector("header").classList.remove("invisible");
-          document.querySelector("header").classList.add("header-ready");
+          let header = document.querySelector("header");
+          header.classList.remove("invisible");
+          header.classList.add("header-ready");
 
           document.querySelector("#main-nav").classList.remove("invisible");
 
@@ -49,12 +43,12 @@ const MainCanvas = () => {
 
     const cubeTextureLoader = new THREE.CubeTextureLoader(loadingManager);
     const envMap = cubeTextureLoader.load([
-      "./cubemaps/px.jpg",
-      "./cubemaps/nx.jpg",
-      "./cubemaps/py.jpg",
-      "./cubemaps/ny.jpg",
-      "./cubemaps/pz.jpg",
-      "./cubemaps/nz.jpg",
+      "./cubemaps/px.webp",
+      "./cubemaps/nx.webp",
+      "./cubemaps/py.webp",
+      "./cubemaps/ny.webp",
+      "./cubemaps/pz.webp",
+      "./cubemaps/nz.webp",
     ]);
 
     // Scene
@@ -167,39 +161,11 @@ const MainCanvas = () => {
     };
     window.addEventListener("scroll", handleScroll);
 
-    /**
-     * MENU FUNCTION
-     */
-
-    const burgerMenu = (cameraPos) => {
-      const toggleButton = document.querySelector(".js-colorlib-nav-toggle");
-
-      $(".js-colorlib-nav-toggle").on("click", function () {
-        if (document.querySelector("#root").classList.contains("menu-show")) {
-          document.querySelector("#root").classList.remove("menu-show");
-          gsap.from(cameraPos, { duration: 1, delay: 0, z: -50 });
-        } else {
-          document.querySelector("#root").classList.add("menu-show");
-        }
-      });
-
-      $(".navig-link").on("click", function () {
-        toggleMenu();
-        document.querySelector("li.active").classList.remove("active");
-        this.parentElement.classList.add("active");
-        document.querySelector("#root").classList.remove("menu-show");
-
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth",
-        });
-      });
-    };
-    burgerMenu(camera.position);
-
     // Renderer
-    const renderer = new THREE.WebGLRenderer();
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
     mount.current.appendChild(renderer.domElement);
 
     // Update Resizes
@@ -209,12 +175,14 @@ const MainCanvas = () => {
       sizes.height = window.innerHeight;
 
       // Update camera
-      camera.aspect = sizes.width / sizes.height;
-      camera.updateProjectionMatrix();
+      if (sizes.width > 600) {
+        camera.aspect = sizes.width / sizes.height;
+        camera.updateProjectionMatrix();
 
-      // Update
-      renderer.setSize(sizes.width, sizes.height);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        // Update
+        renderer.setSize(sizes.width, sizes.height);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      }
     };
     window.addEventListener("resize", handleResize);
 
@@ -248,6 +216,14 @@ const MainCanvas = () => {
       plane.geometry.attributes.position.needsUpdate = true;
     };
 
+    // Dispose assets
+    scene.traverse((object) => {
+      if (object instanceof THREE.Mesh) {
+        object.geometry.dispose();
+        object.material.dispose();
+      }
+    });
+
     const tick = () => {
       const elapsedTime = clock.getElapsedTime();
 
@@ -262,11 +238,7 @@ const MainCanvas = () => {
       requestAnimationFrame(tick);
     };
 
-    tick();
-  };
-
-  useEffect(() => {
-    init();
+    requestAnimationFrame(tick);
 
     return () => {
       // Clean up code here (if needed)

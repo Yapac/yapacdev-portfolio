@@ -10,7 +10,7 @@ export default function Work() {
       id: 10,
       title: "Yassine Abouhamid",
       type: "Wordpress website",
-      image: "/images/yassineabouhamid.jpg",
+      image: "/images/yassineabouhamid.webp",
       color: "#408f12",
       description: "A website for a Filmmaker/Cinematographer",
       link: "https://yassineabouhamid.com/",
@@ -20,7 +20,7 @@ export default function Work() {
       id: 9,
       title: "Zineb Koutten",
       type: "Wordpress website",
-      image: "/images/zinebkoutten.jpg",
+      image: "/images/zinebkoutten.webp",
       color: "#8F1216",
       description: "A website for an International street photographer",
       link: "https://zinebkoutten.com/portfolio/",
@@ -30,7 +30,7 @@ export default function Work() {
       id: 8,
       title: "Amenardi sarl",
       type: "Wordpress website",
-      image: "/images/amenardi.jpg",
+      image: "/images/amenardi.webp",
       color: "#b3811e",
       description: "A website for an Inetrior design and Amenagement agency",
       link: "https://amenardi.com",
@@ -40,7 +40,7 @@ export default function Work() {
       id: 7,
       title: "Aida Jamal",
       type: "Wordpress website",
-      image: "/images/aidajamal.jpg",
+      image: "/images/aidajamal.webp",
       color: "#259584",
       description: "A website for 'TAHSSIS' project and it founder ",
       link: "https://aidajamal.com",
@@ -50,7 +50,7 @@ export default function Work() {
       id: 6,
       title: "Cie Haraka",
       type: "Wordpress website",
-      image: "/images/cieharaka.jpg",
+      image: "/images/cieharaka.webp",
       color: "#30a6b1",
       description: "A website for a Non-profit art organization",
       link: "https://cieharaka.com",
@@ -60,7 +60,7 @@ export default function Work() {
       id: 5,
       title: "Mehdi Dahkan",
       type: "Wordpress website",
-      image: "/images/mehdidahkan.jpg",
+      image: "/images/mehdidahkan.webp",
       color: "#b15581",
       description: "A portfolio website for a contemporary dance choreographer",
       link: "https://mehdidahkan.com",
@@ -70,7 +70,7 @@ export default function Work() {
       id: 4,
       title: "Generation Z",
       type: "Wordpress website",
-      image: "/images/generationz.jpg",
+      image: "/images/generationz.webp",
       color: "#657689",
       description: "A modern wordpress website for an urban art association",
       link: "https://tngenerationz.com",
@@ -80,7 +80,7 @@ export default function Work() {
       id: 3,
       title: "Socco Alto",
       type: "Wordpress website",
-      image: "/images/soccoalto.jpg",
+      image: "/images/soccoalto.webp",
       color: "#7a6ba6",
       description:
         "A big website for a famous shopping center located in Tangier",
@@ -91,7 +91,7 @@ export default function Work() {
       id: 2,
       title: "Borj Fez",
       type: "Wordpress website",
-      image: "/images/borjfez.jpg",
+      image: "/images/borjfez.webp",
       color: "#71b842",
       description: "A big website for a famous shopping center located in Fes",
       link: "https://borjfez.com",
@@ -101,7 +101,7 @@ export default function Work() {
       id: 1,
       title: "My Room",
       type: "Webgl experience",
-      image: "/images/my-room.jpg",
+      image: "/images/my-room.webp",
       color: "#cb7543",
       description:
         "Recreating my childhoom room on 3D as a website user expereince",
@@ -112,7 +112,7 @@ export default function Work() {
       id: 0,
       title: "Far Away : Running from the future",
       type: "Video game",
-      image: "/images/faraway.jpg",
+      image: "/images/faraway.webp",
       color: "#974eb9",
       description:
         "First-person parkour shooter game, with an amazing story mode! Made using UNITY",
@@ -126,7 +126,8 @@ export default function Work() {
     return (
       <button
         type="button"
-        role="presentation"
+        role="navigation"
+        aria-label="Next arrow"
         className={className + " hoverable"}
         onClick={onClick}
       >
@@ -136,9 +137,9 @@ export default function Work() {
             <path
               fill="none"
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="24"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="24"
               d="M268 112l144 144-144 144M392 256H100"
             />
           </svg>
@@ -152,7 +153,8 @@ export default function Work() {
     return (
       <button
         type="button"
-        role="presentation"
+        role="navigation"
+        aria-label="Prev arrow"
         className={className + " hoverable"}
         onClick={onClick}
       >
@@ -188,9 +190,6 @@ export default function Work() {
               className="work-carousel"
               dots={true}
               infinite={true}
-              // margin={30}
-              // animateIn="flipInX"
-              // animateOut="slideOutDown"
               slidesToShow={1}
               slidesToScroll={1}
               nextArrow={<NextArrow />}
@@ -200,8 +199,8 @@ export default function Work() {
                   <ul className="flex justify-center"> {dots} </ul>
                 </div>
               )}
-              customPaging={(i) => (
-                <button role="button" class="slick-dot">
+              customPaging={() => (
+                <button role="button" aria-label="paging" className="slick-dot">
                   <span></span>
                 </button>
               )}

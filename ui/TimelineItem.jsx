@@ -1,4 +1,3 @@
-import { cardo } from "@/libs/fonts";
 import Image from "next/image";
 
 export default function TimelineItem({
@@ -19,16 +18,15 @@ export default function TimelineItem({
             className="img"
             src={image}
             fill
-            sizes="(max-width: 768px) 95vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 768px) 95vw, (max-width: 1200px) 50vw, 40vw"
             alt={"Picture of " + title}
-            style={{ objectFit: "cover" }}
             loading="lazy"
+            placeholder="empty"
+            style={{ objectFit: "cover" }}
           />
         </div>
         <h2 className={"timeline__content-title"}>{year}</h2>
-        <p className={cardo.className + " timeline__content-desc"}>
-          {description}
-        </p>
+        <p className={"timeline__content-desc"}>{description}</p>
       </div>
     </div>
   );

@@ -1,13 +1,17 @@
 export default function Hero() {
   return (
     <>
-      <a className="scroll-downs hoverable" href="#about">
+      <a
+        className="scroll-downs hoverable"
+        href="#about"
+        aria-label="Learn more about Yapacdev's story"
+      >
         <div className="mousey">
           <div className="scroller"></div>
         </div>
       </a>
-      <section id="home" className="hidden">
-        <div className="container holder-hero">
+      <section id="home">
+        <div className="container holder-hero hidden">
           <h1 className="title" data-text="Building Beyond">
             Building Beyond
           </h1>
