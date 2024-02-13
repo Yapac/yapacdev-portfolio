@@ -174,15 +174,12 @@ const MainCanvas = () => {
       sizes.width = window.innerWidth;
       sizes.height = window.innerHeight;
 
-      // Update camera
-      if (sizes.width > 600) {
-        camera.aspect = sizes.width / sizes.height;
-        camera.updateProjectionMatrix();
-      } else {
-        // Update
-        renderer.setSize(sizes.width, sizes.height);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      }
+      camera.aspect = sizes.width / sizes.height;
+      camera.updateProjectionMatrix();
+
+      // Update canvas size
+      renderer.setSize(sizes.width, sizes.height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     };
     window.addEventListener("resize", handleResize);
 

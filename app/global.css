@@ -79,8 +79,9 @@ canvas {
 }
 #home {
   position: relative;
-  margin-top: 125px;
-  height: 90vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
   z-index: 1;
 }
 
@@ -114,6 +115,7 @@ canvas {
   font-weight: 700;
   position: relative;
   color: transparent;
+  text-align: justify;
   -webkit-text-stroke: 0.15vw rgb(150, 150, 150);
   padding-right: 10px;
 }
@@ -122,6 +124,7 @@ canvas {
   opacity: 0;
   font-weight: 700;
   line-height: 1.2;
+  text-align: justify;
 
   animation: fadeUp 500ms 2.5s forwards;
   margin-bottom: 0.3em;
@@ -357,7 +360,7 @@ canvas {
 }
 @media (min-width: 1200px) {
   .container {
-    max-width: 1140px;
+    max-width: 1185px;
   }
 }
 
@@ -1014,6 +1017,7 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
 }
 #cards img {
   max-height: 125px;
+  max-width: 200px;
   margin: auto;
   display: inline-block;
 }
@@ -1160,10 +1164,10 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
   background: #ff2cc3;
 }
 .card--dark {
-  background: linear-gradient(20deg, #191919 0%, #100b32 33%, #5c0249 100%);
+  background: linear-gradient(20deg, #191919 0%, #1f175a 33%, #515474 100%);
 }
 .card--dark .card__type {
-  background: #5c0249;
+  background: #1f175a;
 }
 .card--grass {
   background: linear-gradient(140deg, #c4da3d 0%, #6e7f0e 69%, #275009 100%);

@@ -14,7 +14,7 @@ export default function Timeline() {
       year: "2002",
       image: "/images/new-born.webp",
       description:
-        'I was born on February 28, 2002 ( probably on a shiny morning ) in Morocco and I was named "Yassine El atlassi".',
+        'I was born on February 28, 2002, likely on a bright morning, in Morocco, and I was named "Yassine El atlassi".',
     },
     {
       id: 1,
@@ -22,7 +22,7 @@ export default function Timeline() {
       year: "2008",
       image: "/images/kid-playing.webp",
       description:
-        "In my childhood, I was interested in that games that depend on problem-solving and fast thinking, I was in love with the feelings that come to you every time you solve a problem or you discover something new.",
+        "During my childhood, I was drawn to games that relied on problem-solving and quick thinking. I found immense joy in the rush of emotions that accompanied each problem solved or new discovery made.",
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ export default function Timeline() {
       year: "2010",
       image: "/images/old-pc.webp",
       description:
-        "By this time I got my 1st pc interaction, going into this world of creations starting with games and ending in the wide world of the internet made me in love with this machine.",
+        "During this period, I had my first interaction with a PC. Immersing myself in the world of games and expanding into the vast realm of the internet, fueled my love for this machine.",
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ export default function Timeline() {
       year: "2016",
       image: "/images/books.webp",
       description:
-        "During these years of school, I fell in love with math and physics, because they had equation solving in them and I loved this aspect I was interested in structured solving, and at the same time I loved arts and design as well.",
+        "Throughout my school years, I developed a profound love for mathematics and physics. Their emphasis on equation solving deeply appealed to me. Simultaneously, I harbored a passion for the arts and design.",
     },
     {
       id: 4,
@@ -46,7 +46,7 @@ export default function Timeline() {
       year: "2019",
       image: "/images/dev-pc.webp",
       description:
-        "After all these years, all the interests and all the influence surely grow a big desire for programming so as my main path I chose to be a software engineer and also study design/ user experience.",
+        "After all these years, a strong desire for programming emerged. I chose to pursue a career as a software engineer while also focusing on the design and artistic side, blending my passions into a cohesive path.",
     },
     {
       id: 5,
@@ -54,7 +54,7 @@ export default function Timeline() {
       year: "2022",
       image: "/images/go-up.webp",
       description:
-        "Today, I am always trying to learn new things by searching and reading online courses, I always aim for the best technologies to get the best results. Pushing the barrier is always an option.",
+        "Today, I constantly seek to expand my knowledge by engaging in online courses and researching new topics. I strive to leverage the best technologies to achieve optimal results, and always pushing my boundaries.",
     },
   ];
   const handleScroll = () => {
