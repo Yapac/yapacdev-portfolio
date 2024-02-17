@@ -11,7 +11,7 @@ export default function Hero() {
         </div>
       </a>
       <section id="home">
-        <div className="container holder-hero hidden">
+        <div className="container holder-hero">
           <h1 className="title" data-text="Building Beyond">
             Building Beyond
           </h1>

@@ -1,0 +1,36 @@
+/* PRIVACY PAGES TEMPLATE */
+
+.privacy p {
+  margin: 0;
+  line-height: 1.5;
+  /* color: #202020; */
+  font-size: 0.9em;
+  font-weight: light;
+}
+
+.privacy a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+
+  transition: 0.5s all ease;
+}
+.privacy a:hover {
+  opacity: 0.7;
+}
+
+.privacy h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 1.2em 0 0.6em 0;
+}
+
+.privacy-container {
+  /* padding: 5% 15%; */
+  text-align: justify;
+}
+
+.privacy h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0.65em 0;
+}

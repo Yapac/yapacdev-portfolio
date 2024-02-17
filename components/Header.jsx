@@ -1,11 +1,12 @@
 import { poppins } from "@/libs/fonts";
 import { Navigation } from "@/ui";
 import MenuButton from "@/ui/MenuButton";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <>
-      <nav id="main-nav" role="navigation" className="invisible">
+      <nav id="main-nav" role="navigation">
         <div className="js-fullheight colorlib-table">
           <div className="colorlib-table-cell js-fullheight">
             <div className="row no-gutters">
@@ -96,12 +97,12 @@ export default function Header() {
         </div>
       </nav>
 
-      <header className="fixed-top invisible">
+      <header className="fixed-top">
         <div className="container holder-4k">
           <div className="colorlib-navbar-brand hoverable">
-            <a className={poppins.className + " colorlib-logo"} href="">
-              YapacDev
-            </a>
+            <Link href="/">
+              <p className={`${poppins.className} colorlib-logo`}>YapacDev</p>
+            </Link>
           </div>
           <MenuButton />
         </div>

@@ -37,7 +37,7 @@ const Cursor = () => {
           mountRef.current.classList.remove("link-grow-rect");
         });
       });
-    }, 2000);
+    }, 1750);
 
     const handleMouseMove = (e) => {
       mountRef.current.style.top = e.clientY + "px";
