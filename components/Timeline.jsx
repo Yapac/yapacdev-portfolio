@@ -22,7 +22,7 @@ export default function Timeline() {
       year: "2008",
       image: "/images/kid-playing.webp",
       description:
-        "During my childhood, I was drawn to games that relied on problem-solving and quick thinking. I found immense joy in the rush of emotions that accompanied each problem solved or new discovery made.",
+        "During my childhood, I was drawn to games that relied on problem-solving and quick thinking. I found immense joy in each problem I solved or a new discovery I made.",
     },
     {
       id: 2,
@@ -51,7 +51,7 @@ export default function Timeline() {
     {
       id: 5,
       title: "TODAY",
-      year: "2022",
+      year: "2024",
       image: "/images/go-up.webp",
       description:
         "Today, I constantly seek to expand my knowledge by engaging in online courses and researching new topics. I strive to leverage the best technologies to achieve optimal results, and always pushing my boundaries.",

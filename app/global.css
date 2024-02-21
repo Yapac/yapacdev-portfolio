@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* GUI */
+.dg.ac {
+  z-index: 9999999999 !important;
+}
+
+/* GLOBALS*/
 * {
   margin: 0;
   padding: 0;
@@ -101,11 +107,6 @@ canvas {
   }
 }
 
-@media (max-width: 690px) {
-  .title {
-    font-size: 7vw !important;
-  }
-}
 .title {
   display: inline-block;
   opacity: 0;
@@ -150,7 +151,7 @@ canvas {
   position: absolute;
   left: 0;
   width: 0;
-  height: 100%;
+  height: 110%;
   color: #afafaf;
   -webkit-text-stroke: 0vw gray;
 
@@ -187,10 +188,13 @@ canvas {
   .slogan {
     padding-right: 10px;
     display: inline-block;
-    font-size: 7vw;
+    font-size: 9vw;
     position: relative;
     color: transparent;
     -webkit-text-stroke: 0.15vw rgb(150, 150, 150);
+  }
+  .title {
+    font-size: 9vw !important;
   }
   .holder-hero {
     padding-top: 0;
@@ -2899,7 +2903,7 @@ input[type="text"]::-ms-clear {
 @keyframes load {
   0% {
     opacity: 0.08;
-    filter: blur(5px);
+    filter: blur(1px);
     letter-spacing: 2px;
   }
   100% {

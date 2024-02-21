@@ -115,7 +115,7 @@ export default function Work() {
       image: "/images/faraway.webp",
       color: "#974eb9",
       description:
-        "First-person parkour shooter game, with an amazing story mode! Made using UNITY",
+        "First-person shooter game, with an amazing story mode! Made using UNITY",
       link: "https://play.google.com/store/apps/details?id=com.yapacgames.faraway",
       buttonText: "View app",
     },

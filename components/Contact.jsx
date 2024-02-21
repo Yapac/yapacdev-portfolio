@@ -602,7 +602,7 @@ export default function Contact() {
 
           <div className="codrops-top">
             <a
-              className="codrops-icon"
+              className="codrops-icon hoverable"
               href="https://www.instagram.com/yapacdev/"
               target="_blank"
               aria-label="Yapacdev's instagram account"
@@ -620,7 +620,7 @@ export default function Contact() {
               <span>Find me on instagram!</span>
             </a>
             <a
-              className="codrops-icon"
+              className="codrops-icon hoverable"
               href="https://wa.me/212656034248?text=Heey%2CIm+from+the+website%21"
               target="_blank"
               aria-label="Yapacdev's whatsapp number"
@@ -641,7 +641,7 @@ export default function Contact() {
             </a>
 
             <a
-              className="codrops-icon"
+              className="codrops-icon hoverable"
               href="https://www.linkedin.com/in/yapacdev/"
               target="_blank"
               aria-label="Yapacdev's linkedin account"
