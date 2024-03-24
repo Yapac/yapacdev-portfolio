@@ -209,7 +209,7 @@ const MainCanvas = () => {
             color: { value: new THREE.Color(colorOptions[i]) },
             distanceFactor: { value: 1.0 },
             maxDistance: { value: 10.0 },
-            alpha: { value: 0.95 },
+            alpha: { value: 0.75 },
           },
           vertexShader: vertexShader,
           fragmentShader: fragmentShader,

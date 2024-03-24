@@ -13,13 +13,13 @@ const Cursor = () => {
       const handleMouseOver = (e) => {
         e.preventDefault();
 
-        mountRef.current.classList.add("link-grow");
+        mountRef.current.classList.add("link-grow-2");
       };
 
       const handleMouseLeave = (e) => {
         e.preventDefault();
 
-        mountRef.current.classList.remove("link-grow");
+        mountRef.current.classList.remove("link-grow-2");
       };
 
       hoverables.forEach((hoverable) => {
