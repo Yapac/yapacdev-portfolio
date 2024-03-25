@@ -436,7 +436,6 @@ const MainCanvas = () => {
 
       camera.position.z = 128 - t * -0.025;
 
-      console.log(t);
       if (interactiveWorld.position.y < 30) {
         interactiveWorld.position.y = 20 + t * -0.015;
       }
@@ -534,11 +533,6 @@ const MainCanvas = () => {
           object.material.dispose();
         }
       });
-
-      // Clean Up unmounts component
-      if (mount.current) {
-        mount.current.destroy();
-      }
     };
   }, []); // empty dependency array ensures that the effect runs once on mount
 
