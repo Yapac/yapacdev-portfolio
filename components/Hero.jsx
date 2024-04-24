@@ -42,11 +42,11 @@ export default function Hero() {
           <Image
             className="img"
             src="/gif/hero.gif"
-            priority
             fill
-            sizes="95vw"
+            unoptimized
             alt="Hero gif"
             style={{ objectFit: "cover" }}
+            priority
           />
         </div>
         <div className="titleWrapper">

@@ -10,10 +10,7 @@ import Image from "next/image";
 export default function About() {
   const textWrapperRef = useRef(null);
   const socialContainerRef = useRef(null);
-
   const infiniteTextRef = useRef(null);
-  let xPercent = 0;
-  let direction = -1;
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -38,14 +35,14 @@ export default function About() {
 
     /* PARAGRAPH */
     const paragraphText = new SplitType(textWrapperRef.current.children[2], {
-      types: "chars, words",
+      types: "words",
     });
 
-    gsap.from(paragraphText.chars, {
-      opacity: 0.75,
+    gsap.from(paragraphText.words, {
+      opacity: 0,
       yPercent: 100,
 
-      stagger: 0.002,
+      stagger: 0.005,
       scrollTrigger: {
         trigger: textWrapperRef.current.children[2],
         toggleActions: "play paused play reverse",
@@ -90,8 +87,13 @@ export default function About() {
       },
       x: "-750px",
     });
+
     requestAnimationFrame(infiniteText_animation);
   });
+
+  let xPercent = 0;
+  let direction = -1;
+
   const infiniteText_animation = () => {
     if (xPercent < -100) {
       xPercent = 0;

@@ -5,13 +5,6 @@ import TransitionLink from "./TransitionLink";
 const Navigation = () => {
   const toggleMenu = useStore((state) => state.toggleMenu);
 
-  const handleClick = (e) => {
-    toggleMenu();
-    document.querySelector("#root").classList.remove("menu-show");
-
-    document.querySelector("li.active").classList.remove("active");
-    e.target.parentElement.classList.add("active");
-  };
   return (
     <ul>
       <li className="active">

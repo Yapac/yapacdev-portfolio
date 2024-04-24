@@ -72,10 +72,8 @@ const Cursor = () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []); // Empty dependency array means this effect runs once after the first render
-  const aa = () => {
-    console.log("ds");
-  };
-  return <div className="cursor" ref={mountRef} onClick={aa} />;
+
+  return <div className="cursor" ref={mountRef} />;
 };
 
 export default Cursor;

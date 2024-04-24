@@ -1,3 +1,4 @@
+"use client";
 import { TimelineItem } from "../ui";
 
 import { client } from "@/sanity/lib/client";

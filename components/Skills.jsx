@@ -12,13 +12,11 @@ export default function Skills() {
         "--cursor-text",
         '"hide skills"'
       );
-      console.log("hide");
     } else {
       document.documentElement.style.setProperty(
         "--cursor-text",
         '"show skills"'
       );
-      console.log("show");
     }
   };
 

@@ -12,7 +12,6 @@
 * {
   margin: 0;
   padding: 0;
-  /* cursor: none !important; */
 }
 
 body {
@@ -337,6 +336,21 @@ canvas {
     opacity: 1;
   }
 }
+@keyframes gif-anim-phone {
+  0% {
+    top: 65%;
+    height: 5%;
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    height: 450px;
+    opacity: 1;
+  }
+}
 @keyframes fadeUp {
   0% {
     opacity: 0;
@@ -359,6 +373,9 @@ canvas {
 @media (max-width: 649px) {
   .holder-hero {
     padding-bottom: 4rem;
+  }
+  .hero-gif {
+    animation: gif-anim-phone 1.25s cubic-bezier(0.45, 0, 0.3, 1.25) 1s forwards;
   }
 }
 
@@ -513,7 +530,7 @@ canvas {
   font-size: 3.25vw;
   letter-spacing: 5px;
   text-transform: uppercase;
-  padding: 5px 0;
+  margin: 5px 0;
   overflow: hidden;
 }
 #main-nav ul li .navig-link span {
@@ -1310,7 +1327,6 @@ button:focus {
 }
 .slick-list.dragging {
   cursor: pointer;
-  cursor: hand;
 }
 
 .slick-slider .slick-track,
@@ -3054,7 +3070,7 @@ DEMO
 
 .social-container h4 {
   color: #bdbdbd;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
 }
@@ -3069,13 +3085,16 @@ DEMO
   .about-wrapper .about-content {
     flex: 47%;
     padding-left: 0;
-    padding-bottom: 32px;
+    padding-bottom: 64px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
   .about-container {
     padding: 75px 30px;
+  }
+  .social-container {
+    display: none;
   }
 }
 
