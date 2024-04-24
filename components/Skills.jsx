@@ -1,20 +1,66 @@
-import { cardo, open_Sans } from "@/libs/fonts";
+"use client";
+import { useState } from "react";
 import { SkillCard } from "../ui";
 
 export default function Skills() {
+  const [showMore, setShowMore] = useState(false);
+
+  const toggleShowMore = () => {
+    setShowMore(!showMore);
+    if (!showMore) {
+      document.documentElement.style.setProperty(
+        "--cursor-text",
+        '"hide skills"'
+      );
+      console.log("hide");
+    } else {
+      document.documentElement.style.setProperty(
+        "--cursor-text",
+        '"show skills"'
+      );
+      console.log("show");
+    }
+  };
+
   const Data = [
     {
-      id: 1,
-      cardType: "water",
-      title: "CSS",
-      type: "water",
-      imageLink: "/skillsIcons/CSS3_logo.svg",
-      HP: "130",
-      Attack: "65",
-      Defense: "60",
+      id: 6,
+      cardType: "ice",
+      title: "WORDPRESS",
+      type: "ice",
+      imageLink: "/skillsIcons/wordpress-logo.webp",
+      HP: "65",
+      Attack: "60",
+      Defense: "110",
       Speed: "65",
-      Ability: "Charm",
-      HiddenAbility: "Hydration",
+      Ability: "Immortality",
+      HiddenAbility: "Ice Body",
+    },
+    {
+      id: 13,
+      cardType: "dark",
+      title: "Next.js",
+      type: "glass",
+      imageLink: "/skillsIcons/nextjs-icon.webp",
+      HP: "95",
+      Attack: "95",
+      Defense: "80",
+      Speed: "125",
+      Ability: "Speed",
+      HiddenAbility: "Camouflage",
+    },
+    {
+      id: 11,
+      cardType: "water",
+      title: "React Native",
+      type: "Atom",
+      imageLink: "/skillsIcons/react-native_logo.png",
+      HP: "95",
+      Attack: "115",
+      Defense: "70",
+      Speed: "120",
+      Ability: "One shot",
+      HiddenAbility: "Inner Focus",
     },
     {
       id: 2,
@@ -55,19 +101,7 @@ export default function Skills() {
       Ability: "Smart",
       HiddenAbility: "Imperative",
     },
-    {
-      id: 13,
-      cardType: "dark",
-      title: "Next.js",
-      type: "glass",
-      imageLink: "/skillsIcons/nextjs-icon.webp",
-      HP: "95",
-      Attack: "95",
-      Defense: "80",
-      Speed: "125",
-      Ability: "Time Freezing",
-      HiddenAbility: "Camouflage",
-    },
+
     {
       id: 9,
       cardType: "earth",
@@ -96,19 +130,6 @@ export default function Skills() {
     },
 
     {
-      id: 6,
-      cardType: "water",
-      title: "WORDPRESS",
-      type: "ice",
-      imageLink: "/skillsIcons/Wordpress_logo.webp",
-      HP: "65",
-      Attack: "60",
-      Defense: "110",
-      Speed: "65",
-      Ability: "Immortality",
-      HiddenAbility: "Ice Body",
-    },
-    {
       id: 5,
       cardType: "ice",
       title: "PHP",
@@ -122,19 +143,7 @@ export default function Skills() {
       HiddenAbility: "Bouncy",
       imgStyle: { maxHeight: 105 + "px" },
     },
-    {
-      id: 11,
-      cardType: "water",
-      title: "React Native",
-      type: "Atom",
-      imageLink: "/skillsIcons/react-native_logo.png",
-      HP: "95",
-      Attack: "115",
-      Defense: "70",
-      Speed: "120",
-      Ability: "One shot",
-      HiddenAbility: "Inner Focus",
-    },
+
     {
       id: 12,
       cardType: "ice",
@@ -160,6 +169,19 @@ export default function Skills() {
       Speed: "95",
       Ability: "Elasticity",
       HiddenAbility: "Chlorophyll",
+    },
+    {
+      id: 1,
+      cardType: "water",
+      title: "CSS",
+      type: "water",
+      imageLink: "/skillsIcons/CSS3_logo.svg",
+      HP: "130",
+      Attack: "65",
+      Defense: "60",
+      Speed: "65",
+      Ability: "Charm",
+      HiddenAbility: "Hydration",
     },
     {
       id: 14,
@@ -228,20 +250,68 @@ export default function Skills() {
     },
   ];
   return (
-    <section id="skills">
+    <section
+      id="skills"
+      className="container nav-highlight"
+      onClick={toggleShowMore}
+    >
       <div className="timeline-header">
-        <h2 className={cardo.className + " timeline-header__title"}>
-          My skills
-        </h2>
+        <h2 className={" timeline-header__title"}>My skills</h2>
         <h3 className={" timeline-header__subtitle"}>
           DISCOVER MY SUPERPOWERS
         </h3>
       </div>
-      <div id="cards" className={open_Sans.className}>
-        {Data &&
-          Data.map((skill) => {
-            return <SkillCard {...skill} key={skill.id} />;
-          })}
+
+      <div
+        id="cards"
+        className={`flex hoverable-button ${!showMore ? "top-display" : ""} `}
+      >
+        <div className="skills-text">
+          <div className="sm_header mb-4">
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="6" cy="6" r="6" fill="white"></circle>
+            </svg>
+            <h3>SKILLS OVERVIEW</h3>
+          </div>
+          <div className="about-right">
+            <div className="skill-stats__item ">
+              <h5 className="p3 ">Total skills</h5>
+              <h4 className="about-right__number d2">
+                <span className="">{Data.length}+</span>
+              </h4>
+            </div>
+            <div className="skill-stats__item ">
+              <h5 className="p3 ">Stacks</h5>
+              <h4 className="about-right__number d2">
+                <span className="">4</span>
+              </h4>
+            </div>
+            <div className="skill-stats__item ">
+              <h5 className="p3 ">Possibilities</h5>
+              <h4 className="about-right__number d2">
+                <span className="">∞</span>
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div className="skills-cards hiddenc">
+          {Data &&
+            Data.map((skill, index) => {
+              return (
+                <SkillCard
+                  {...skill}
+                  isHidden={index >= 3 && !showMore ? "hidden" : ""}
+                  key={skill.id}
+                />
+              );
+            })}
+        </div>
       </div>
     </section>
   );

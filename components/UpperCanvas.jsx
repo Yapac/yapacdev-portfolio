@@ -2,16 +2,13 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
+import useStore, { getCanvasLoaded } from "@/store/store";
 
-const UpperCanvas = ({ areCanvasesLoaded }) => {
+const UpperCanvas = () => {
   const mount = useRef(null);
+  const isCanvasLoaded = useStore(getCanvasLoaded);
 
   useEffect(() => {
-    // Texture Loader
-    const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load("./textures/Gaseous1.png");
-    const textsure = textureLoader.load("./textures/NormalMap.jpg");
-
     // Scene
     const scene = new THREE.Scene();
 
@@ -19,53 +16,64 @@ const UpperCanvas = ({ areCanvasesLoaded }) => {
     const nonRotationalGroup = new THREE.Group();
     scene.add(nonRotationalGroup);
 
-    const planet = new THREE.Group();
-    planet.add(
-      new THREE.Mesh(
-        new THREE.SphereGeometry(2, 32, 32),
-        new THREE.MeshPhongMaterial({ map: texture, normalMap: textsure })
-      )
-    );
-    planet.add(
-      new THREE.Mesh(
-        new THREE.TorusGeometry(3.5, 0.5, 2.5, 100),
-        new THREE.MeshPhongMaterial({ color: 0xffffff })
-      ).rotateX(Math.PI / 1.7)
-    );
-    planet.position.z = 125;
-    planet.position.x = 3;
-    planet.position.y = 20;
+    const LambertMaterial = new THREE.MeshLambertMaterial({
+      color: 0xffffff,
+      side: THREE.DoubleSide,
+    });
 
-    planet.scale.set(0.5, 0.5, 0.5);
-    nonRotationalGroup.add(planet);
+    //--------------------------------------------------------------------
+    // Rocks
+    const donutGeometry = new THREE.BufferGeometry(0.3, 0.2, 20, 45);
+    const dodecahedronGeometry = new THREE.OctahedronGeometry(0.4, 0);
+    const sphereBufferGeometry = new THREE.OctahedronGeometry(0.7, 7);
 
-    // Planet lighting
-    const d = new THREE.PointLight(0x0e09dc, 0.4, 15);
-    d.position.set(5, 20, 126);
-    nonRotationalGroup.add(d);
+    let obj;
+    for (let i = 0; i < 125; i++) {
+      switch (Math.floor(Math.random() * 3)) {
+        case 0:
+          obj = new THREE.Mesh(donutGeometry, LambertMaterial);
+          break;
+        case 1:
+          obj = new THREE.Mesh(dodecahedronGeometry, LambertMaterial);
+          break;
+        case 2:
+          obj = new THREE.Mesh(sphereBufferGeometry, LambertMaterial);
+          break;
+        default:
+          obj = new THREE.Mesh(dodecahedronGeometry, LambertMaterial);
+          break;
+      }
 
-    const d2 = new THREE.PointLight(0xffffff, 0.4, 15);
-    d2.position.set(3, 25, 126);
-    nonRotationalGroup.add(d2);
+      obj.position.set(
+        (Math.random() - 0.5) * 200,
+        (Math.random() - 0.5) * 10 + 5,
+        (Math.random() - 0.5) * 200
+      );
 
+      obj.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0);
+
+      scene.add(obj);
+    }
+
+    // 5.Lights
     const initLights = () => {
       const r = 30;
       const y = 10;
-      const lightDistance = 300;
+      const lightDistance = 500;
 
-      const light1 = new THREE.PointLight(0x0e09dc, 0.4, lightDistance);
+      const light1 = new THREE.PointLight(0x204f6d, 0.4, lightDistance);
       light1.position.set(0, y, r - 60);
       scene.add(light1);
 
-      const light2 = new THREE.PointLight(0x1cd1e1, 0.4, lightDistance);
+      const light2 = new THREE.PointLight(0xc0c0c0, 0.4, lightDistance);
       light2.position.set(0, -y, -r - 60);
       nonRotationalGroup.add(light2);
 
-      const light3 = new THREE.PointLight(0x18c02c, 0.4, lightDistance);
+      const light3 = new THREE.PointLight(0x808080, 0.4, lightDistance);
       light3.position.set(r, y, -60);
       scene.add(light3);
 
-      const light4 = new THREE.PointLight(0xee3bcf, 0.4, lightDistance);
+      const light4 = new THREE.PointLight(0x204f6d, 0.4, lightDistance);
       light4.position.set(-r, y, -60);
       nonRotationalGroup.add(light4);
     };
@@ -76,6 +84,7 @@ const UpperCanvas = ({ areCanvasesLoaded }) => {
       width: window.innerWidth,
       height: window.innerHeight,
     };
+
     window.addEventListener("resize", () => {
       // Update sizes
       sizes.width = window.innerWidth;
@@ -97,27 +106,16 @@ const UpperCanvas = ({ areCanvasesLoaded }) => {
       0.01,
       500
     );
-    camera.position.x = 0;
-    camera.position.y = 75;
-    camera.position.z = 325;
+    camera.position.set(0, 75, 325);
+
     nonRotationalGroup.add(camera);
 
-    if (areCanvasesLoaded) {
-      setTimeout(() => {
-        gsap.to(camera.position, {
-          duration: 1,
-          delay: 1,
-          z: 128.6,
-          y: 20,
-        });
-      }, 750);
-    }
-
     /**
-     * Scroll Animation
+     *   Scroll Listener ( On Scroll )
      */
+    let t = 0;
     const handleScroll = () => {
-      const t = document.body.getBoundingClientRect().top;
+      t = document.body.getBoundingClientRect().top;
 
       camera.position.z = 128 - t * -0.025;
     };
@@ -128,17 +126,29 @@ const UpperCanvas = ({ areCanvasesLoaded }) => {
     renderer.setClearColor(0x000000, 0);
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    if (areCanvasesLoaded) {
+
+    /* ON LOAD */
+    if (isCanvasLoaded) {
       mount.current.appendChild(renderer.domElement);
+
+      setTimeout(() => {
+        gsap.to(camera.position, {
+          duration: 1,
+          delay: 1,
+          z: 128.6,
+          y: 20,
+        });
+      }, 750);
     }
 
+    /* ANIMATIONS */
     const clock = new THREE.Clock();
+
     const tick = () => {
       const elapsedTime = clock.getElapsedTime();
 
       // Update Objects
       nonRotationalGroup.rotation.y = elapsedTime / 15;
-      planet.rotation.y = elapsedTime / 3;
 
       // Render
       renderer.render(scene, camera);
@@ -154,7 +164,7 @@ const UpperCanvas = ({ areCanvasesLoaded }) => {
       // Dispose resources, remove event listeners, etc.
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [areCanvasesLoaded]); // empty dependency array to run the effect only once
+  }, [isCanvasLoaded]); // empty dependency array to run the effect only once
 
   return <div className="upper" ref={mount} />;
 };

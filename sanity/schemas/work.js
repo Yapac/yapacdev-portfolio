@@ -4,6 +4,15 @@ export const work = {
   type: "document",
   fields: [
     {
+      name: "image",
+      title: "Image",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "title",
       title: "Title",
       type: "string",
@@ -26,7 +35,10 @@ export const work = {
       type: "string",
       options: {
         list: [
-          { title: "Wordpress website", value: "Wordpress website" },
+          { title: "Business website", value: "Business website" },
+          { title: "Portfolio website", value: "Portfolio website" },
+          { title: "Ecommerce website", value: "Ecommerce website" },
+          { title: "Nonprofil website", value: "Nonprofil website" },
           { title: "Webgl experience", value: "Webgl experience" },
           { title: "Video game", value: "Video game" },
         ],
@@ -44,15 +56,6 @@ export const work = {
       },
     },
 
-    {
-      name: "image",
-      title: "Image",
-      type: "image",
-      options: {
-        hotspot: true, // <-- Defaults to false
-      },
-      validation: (Rule) => Rule.required(),
-    },
     {
       name: "color",
       title: "Color",

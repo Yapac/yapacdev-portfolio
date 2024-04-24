@@ -1,9 +1,9 @@
 import "./global.css";
-import { Cursor, Header } from "@/components";
-import { poppins } from "../libs/fonts";
+import { Cursor, Header, SmoothScrolling } from "@/components";
+import { league_Spartan } from "../libs/fonts";
 
 export const metadata = {
-  title: "YapacDev - Building Beyond Bounderies",
+  title: "YapacDev - Senior developer",
   description:
     "Software engineer/ Fullstack developer/ problem solver, my name is Yassine El atlassi known as Yapac..",
 };
@@ -11,12 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={league_Spartan.className}>
         <div id="root" className="">
           <Cursor />
           <Header />
 
-          {children}
+          <SmoothScrolling>{children}</SmoothScrolling>
         </div>
       </body>
     </html>

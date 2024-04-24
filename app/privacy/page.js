@@ -38,6 +38,19 @@ const Privacy = () => {
         We don’t send your data to any 3rd party company, your data is safe with
         us.
       </p>
+      <h2>6.License includes:</h2>
+      <p>3D Icons from : https://free3dicon.com/</p>
+      <div>
+        Icons made by
+        <a href="https://www.flaticon.com/authors/edtim" title="edt.im">
+          edt.im
+        </a>
+        from
+        <a href="https://www.flaticon.com/" title="Flaticon">
+          www.flaticon.com'
+        </a>
+      </div>
+
       <h2>6.Owner:</h2>
       <p>
         The owner or this site is Yassine el atlassi - If you have any questions

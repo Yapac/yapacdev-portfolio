@@ -1,0 +1,262 @@
+/* LOADING CONTAINER */
+#loading-container {
+  min-width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  background: linear-gradient(rgb(0, 0, 0), rgb(7, 6, 8));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  z-index: 5000;
+  pointer-events: none;
+}
+
+@keyframes load {
+  0% {
+    opacity: 0.08;
+    filter: blur(1px);
+    letter-spacing: 2px;
+  }
+  100% {
+    opacity: 1;
+    font-size: 17px;
+    filter: blur(0.3px);
+  }
+}
+
+.loading-title {
+  font-size: 6.5vw;
+  font-weight: 900;
+  letter-spacing: 5px;
+  line-height: 0.9;
+  margin-top: 20px;
+  position: relative;
+  color: #383838;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.loading-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  color: #ffffff;
+  width: 14%;
+  overflow: hidden;
+  text-wrap: nowrap;
+  /* animation: fillAnimation 6s linear forwards; */
+
+  will-change: width;
+
+  transition: width 0.5s;
+}
+
+@keyframes fillAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.loading-subtext {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1vw;
+  font-size: 14px;
+}
+.fadeOut {
+  animation: animFadeOut 1.35s forwards 0s;
+}
+
+@-webkit-keyframes animFadeOut {
+  0% {
+    filter: blur(0.5px);
+    transform: translateY(0);
+  }
+  100% {
+    filter: blur(5px);
+    transform: translateY(100%);
+  }
+}
+
+@keyframes animFadeOut {
+  0% {
+    filter: blur(0.5px);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    filter: blur(5px);
+    opacity: 1;
+    transform: translateY(-150%);
+  }
+}
+
+.🤚 {
+  --skin-color: #c7906c;
+  --tap-speed: 0.6s;
+  --tap-stagger: 0.1s;
+  position: relative;
+  width: 80px;
+  height: 60px;
+  margin-left: 80px;
+}
+
+.🤚:before {
+  content: "";
+  display: block;
+  width: 180%;
+  height: 75%;
+  position: absolute;
+  top: 70%;
+  right: 20%;
+  background-color: black;
+  border-radius: 40px 10px;
+  filter: blur(10px);
+  opacity: 0.3;
+}
+
+.🌴 {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--skin-color);
+  border-radius: 10px 40px;
+}
+
+.👍 {
+  position: absolute;
+  width: 120%;
+  height: 38px;
+  background-color: var(--skin-color);
+  bottom: -18%;
+  right: 1%;
+  transform-origin: calc(100% - 20px) 20px;
+  transform: rotate(-20deg);
+  border-radius: 30px 20px 20px 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.👍:after {
+  width: 20%;
+  height: 60%;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  bottom: -8%;
+  left: 5px;
+  border-radius: 60% 10% 10% 30%;
+  border-right: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.👉 {
+  position: absolute;
+  width: 80%;
+  height: 35px;
+  background-color: var(--skin-color);
+  bottom: 32%;
+  right: 64%;
+  transform-origin: 100% 20px;
+  animation-duration: calc(var(--tap-speed) * 2);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  transform: rotate(10deg);
+}
+
+.👉:before {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 30px;
+  background-color: var(--skin-color);
+  bottom: 8%;
+  right: 65%;
+  transform-origin: calc(100% - 20px) 20px;
+  transform: rotate(-60deg);
+  border-radius: 20px;
+}
+
+.👉:nth-child(1) {
+  animation-delay: 0;
+  filter: brightness(70%);
+  animation-name: tap-upper-1;
+}
+
+.👉:nth-child(2) {
+  animation-delay: var(--tap-stagger);
+  filter: brightness(80%);
+  animation-name: tap-upper-2;
+}
+
+.👉:nth-child(3) {
+  animation-delay: calc(var(--tap-stagger) * 2);
+  filter: brightness(90%);
+  animation-name: tap-upper-3;
+}
+
+.👉:nth-child(4) {
+  animation-delay: calc(var(--tap-stagger) * 3);
+  filter: brightness(100%);
+  animation-name: tap-upper-4;
+}
+
+@keyframes tap-upper-1 {
+  0%,
+  50%,
+  100% {
+    transform: rotate(10deg) scale(0.4);
+  }
+
+  40% {
+    transform: rotate(50deg) scale(0.4);
+  }
+}
+
+@keyframes tap-upper-2 {
+  0%,
+  50%,
+  100% {
+    transform: rotate(10deg) scale(0.6);
+  }
+
+  40% {
+    transform: rotate(50deg) scale(0.6);
+  }
+}
+
+@keyframes tap-upper-3 {
+  0%,
+  50%,
+  100% {
+    transform: rotate(10deg) scale(0.8);
+  }
+
+  40% {
+    transform: rotate(50deg) scale(0.8);
+  }
+}
+
+@keyframes tap-upper-4 {
+  0%,
+  50%,
+  100% {
+    transform: rotate(10deg) scale(1);
+  }
+
+  40% {
+    transform: rotate(50deg) scale(1);
+  }
+}
+
+@media (min-width: 770px) {
+}

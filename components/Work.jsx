@@ -1,5 +1,4 @@
 import { Carousel } from "@/ui";
-import { cardo } from "@/libs/fonts";
 
 import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
@@ -22,9 +21,9 @@ export default async function Work() {
   const Data = await getWork();
 
   return (
-    <section id="work">
+    <section id="work" className="nav-highlight">
       <div className="timeline-header">
-        <h2 className={cardo.className + " timeline-header__title"}>My work</h2>
+        <h2 className={" timeline-header__title"}>Selected work</h2>
         <h3 className={" timeline-header__subtitle"}>
           DISCOVER SOME OF MY WORK
         </h3>

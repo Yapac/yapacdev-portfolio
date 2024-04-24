@@ -13,9 +13,10 @@ export default function SkillCard({
   Ability,
   HiddenAbility,
   imgStyle,
+  isHidden,
 }) {
   return (
-    <figure className={`card card--${cardType} hoverable`}>
+    <figure className={`card card--${cardType} ${isHidden} hoverable`}>
       <div className="card__image-container">
         <div className="card_image">
           <Image

@@ -1,11 +1,9 @@
 import {
   LoadingScreen,
-  // Contact,
   Hero,
   MainCanvas,
-  // Skills,
-  // Timeline,
-  // Work,
+  UpperCanvas,
+  About,
 } from "@/components";
 
 import dynamic from "next/dynamic";
@@ -17,9 +15,12 @@ const Contact = dynamic(() => import("@/components/Contact"), {
 const Skills = dynamic(() => import("@/components/Skills"), {
   ssr: false,
 });
-const Timeline = dynamic(() => import("@/components/Timeline"), {
-  ssr: false,
-});
+const TimelineComponent = dynamic(
+  () => import("@/components/TimelineComponent"),
+  {
+    ssr: false,
+  }
+);
 const Work = dynamic(() => import("@/components/Work"), {
   ssr: false,
 });
@@ -29,10 +30,11 @@ export default function Home() {
     <>
       <LoadingScreen />
       <MainCanvas />
-
+      <UpperCanvas />
       <Hero />
 
-      <Timeline />
+      <About />
+      {/* <TimelineComponent /> */}
       <Skills />
       <Work />
 

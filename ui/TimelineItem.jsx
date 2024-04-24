@@ -1,15 +1,21 @@
+"use client";
+import useStore, { getActiveTimeline } from "@/store/store";
 import Image from "next/image";
 
 export default function TimelineItem({
+  indexId,
   title,
   year,
   image,
   description,
-  isActive,
 }) {
+  const activeTimeline = useStore(getActiveTimeline); // Accessing activeTimeline from the store
+
   return (
     <div
-      className={`timeline-item ${isActive ? "timeline-item--active" : ""}`}
+      className={`timeline-item ${
+        indexId == activeTimeline && "timeline-item--active"
+      } `}
       data-text={title}
     >
       <div className="timeline__content">

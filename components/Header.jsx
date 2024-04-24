@@ -1,24 +1,74 @@
-import { poppins } from "@/libs/fonts";
-import { Navigation } from "@/ui";
+import { league_Spartan } from "@/libs/fonts";
+import { Navigation, HomeNavigation } from "@/ui";
 import MenuButton from "@/ui/MenuButton";
-import Link from "next/link";
+import TransitionLink from "@/ui/TransitionLink";
 
 export default function Header() {
   return (
     <>
       <nav id="main-nav" role="navigation">
-        <div className="js-fullheight colorlib-table">
-          <div className="colorlib-table-cell js-fullheight">
+        <div className="js-fullheight colorlib-table header-container">
+          {/* <div className="colorlib-table-cell js-fullheight">
             <div className="row no-gutters">
               <div className="col-md-12 text-center">
                 <h2 className="mb-4">
-                  <a href="#" className={poppins.className + " logo"}>
+                  <a href="#" className={league_Spartan.className + " logo"}>
                     YapacDev
                   </a>
                 </h2>
-                <Navigation />
+                
               </div>
             </div>
+          </div> */}
+
+          <div className="left">
+            <section>
+              <div className="nav-title">- Socials -</div>
+              <ul>
+                <li>
+                  <a
+                    className="social-link"
+                    href="https://www.linkedin.com/in/yapacdev/"
+                    target="_blank"
+                  >
+                    <span className="hoverable-rect">LinkedIn</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="social-link"
+                    href="https://www.instagram.com/yapacdev/"
+                    target="_blank"
+                  >
+                    <span className="hoverable-rect">Instagram</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="social-link"
+                    href="https://github.com/Yapac"
+                    target="_blank"
+                  >
+                    <span className="hoverable-rect">Github</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="social-link"
+                    href="mailto:yassinelatlassi@gmail.com"
+                    target="_blank"
+                  >
+                    <span className="hoverable-rect">Mail</span>
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <div className="right">
+            <section>
+              <div className="nav-title">Menu -</div>
+              <Navigation />
+            </section>
           </div>
         </div>
         <div id="privacy" className="popup">
@@ -81,17 +131,10 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <div className="bottom-nav">
-          <div className="flex justify-between m-8">
+        <div className="bottom-nav container">
+          <div className="flex justify-between container mb-8">
             <a href="#privacy" className="hoverable-rect open-popup">
               Privacy Policy
-            </a>
-            <a
-              href="mailto:yassinelatlassi@gmail.com"
-              target="_blank"
-              className="hoverable-rect"
-            >
-              yassinelatlassi@gmail.com
             </a>
           </div>
         </div>
@@ -100,11 +143,16 @@ export default function Header() {
       <header className="fixed-top">
         <div className="container holder-4k">
           <div className="colorlib-navbar-brand hoverable">
-            <Link href="/">
-              <p className={`${poppins.className} colorlib-logo`}>YapacDev</p>
-            </Link>
+            <TransitionLink href="/">
+              <p className={`${league_Spartan.className} colorlib-logo`}>
+                YapacDev
+              </p>
+            </TransitionLink>
           </div>
-          <MenuButton />
+          <div className="flex">
+            <HomeNavigation />
+            <MenuButton />
+          </div>
         </div>
       </header>
     </>

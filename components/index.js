@@ -5,9 +5,11 @@ import LoadingScreen from "./LoadingScreen";
 import MainCanvas from "./MainCanvas";
 import UpperCanvas from "./UpperCanvas";
 import Skills from "./Skills";
-import Timeline from "./Timeline";
+import Timeline from "./TimelineComponent";
 import Work from "./Work";
 import Cursor from "./Cursor";
+import SmoothScrolling from "./SmoothScrolling";
+import About from "./About";
 
 export {
   Contact,
@@ -20,4 +22,6 @@ export {
   Timeline,
   Work,
   Cursor,
+  SmoothScrolling,
+  About,
 };

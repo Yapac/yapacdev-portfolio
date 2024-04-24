@@ -1,20 +1,15 @@
 import {
-  Poppins,
-  Cardo,
+  League_Spartan,
   Open_Sans,
   Fira_Sans_Condensed,
 } from "next/font/google";
 
-export const poppins = Poppins({
+export const league_Spartan = League_Spartan({
   subsets: ["latin"],
-  weight: ["700", "400"],
+  weight: ["800", "700", "400", "200"],
   display: "swap",
 });
 
-export const cardo = Cardo({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 export const open_Sans = Open_Sans({
   subsets: ["latin"],
   weight: ["400"],
