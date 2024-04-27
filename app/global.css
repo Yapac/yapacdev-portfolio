@@ -378,6 +378,9 @@ canvas {
   .hero-gif {
     animation: gif-anim-phone 1.25s cubic-bezier(0.45, 0, 0.3, 1.25) 1s forwards;
   }
+  #home {
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 1200px) {

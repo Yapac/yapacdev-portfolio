@@ -45,7 +45,7 @@ export default function Hero() {
             fill
             unoptimized
             alt="Hero gif"
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "contain" }}
             priority
           />
         </div>
