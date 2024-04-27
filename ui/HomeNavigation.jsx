@@ -10,7 +10,8 @@ const HomeNavigation = () => {
 
   const pathname = usePathname();
   useEffect(() => {
-    if (isCanvasLoaded && pathname != "/") {
+    if (isCanvasLoaded && pathname == "/") {
+      console.log("na 4aya");
       const home = document.getElementById("home");
       const about = document.getElementById("about");
       const skills = document.getElementById("skills");

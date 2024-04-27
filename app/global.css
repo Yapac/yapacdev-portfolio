@@ -373,6 +373,7 @@ canvas {
 @media (max-width: 649px) {
   .holder-hero {
     padding-bottom: 4rem;
+    overflow: visible;
   }
   .hero-gif {
     animation: gif-anim-phone 1.25s cubic-bezier(0.45, 0, 0.3, 1.25) 1s forwards;
@@ -2905,13 +2906,13 @@ DEMO
   grid-gap: 16px;
 }
 .about-grid .about-grid-item::after {
-  content: "i";
+  content: "i - hover me";
   position: absolute;
-  width: 20px;
+  width: 100px;
   height: 20px;
   border: 1px solid rgb(175 175 175 / 30%);
   color: rgb(175 175 175 / 30%);
-  border-radius: 50%;
+  border-radius: 69px;
   vertical-align: top;
   text-align: center;
   font-weight: 700;
@@ -2921,7 +2922,8 @@ DEMO
   font-family: Georgia, serif;
   pointer-events: auto;
   bottom: 15px;
-  right: 15px;
+  translate: -50% 0;
+  left: 50%;
   opacity: 1;
   transition: opacity 0.3s ease;
 }
@@ -3068,12 +3070,6 @@ DEMO
   color: white;
 }
 
-.social-container h4 {
-  color: #bdbdbd;
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 0;
-}
 .social-container .codrops-top a {
   color: #7b7b7b;
 }

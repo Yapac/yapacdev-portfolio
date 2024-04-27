@@ -27,8 +27,8 @@ export default function About() {
       stagger: 0.1,
       scrollTrigger: {
         trigger: textWrapperRef.current.children[1],
-        start: "top 80%",
-        end: "-10% 20%",
+        start: "top 90%",
+        end: "-10% 25%",
         scrub: true,
       },
     });
@@ -46,8 +46,8 @@ export default function About() {
       scrollTrigger: {
         trigger: textWrapperRef.current.children[2],
         toggleActions: "play paused play reverse",
-        start: "top 80%",
-        end: "-10% 20%",
+        start: "top 90%",
+        end: "-10% 25%",
       },
     });
     /* BUTTON */
@@ -59,8 +59,8 @@ export default function About() {
       scrollTrigger: {
         trigger: textWrapperRef.current.children[3],
         toggleActions: "play paused play reverse",
-        start: "top 80%",
-        end: "-10% 20%",
+        start: "top 90%",
+        end: "-10% 25%",
       },
     });
     /* FIND ME */
@@ -73,7 +73,7 @@ export default function About() {
         trigger: socialContainerRef.current,
         toggleActions: "play paused play reverse",
         start: "top 90%",
-        end: "-10% 20%",
+        end: "-10% 2d0%",
       },
     });
     /* INFINITE BANNER */
@@ -224,7 +224,6 @@ export default function About() {
             </TransitionLink>
           </div>
           <div className="social-container" ref={socialContainerRef}>
-            <h4>Find me:</h4>
             <div className="codrops-top">
               <a
                 className="codrops-icon hoverable"
