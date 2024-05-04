@@ -41,13 +41,13 @@ const Privacy = () => {
       <h2>6.License includes:</h2>
       <p>3D Icons from : https://free3dicon.com/</p>
       <div>
-        Icons made by
+        Icons made by :{" "}
         <a href="https://www.flaticon.com/authors/edtim" title="edt.im">
           edt.im
         </a>
-        from
+        , from{" "}
         <a href="https://www.flaticon.com/" title="Flaticon">
-          www.flaticon.com'
+          www.flaticon.com
         </a>
       </div>
 
@@ -64,8 +64,8 @@ const Privacy = () => {
         </a>
         .
       </p>
-      <small className="pt-10 inline-block opacity-50 ">
-        This privacy policy was last updated on 2024-02-16.
+      <small className="pt-10 inline-block opacity-50">
+        This privacy policy was last updated on 2024-05-04.
       </small>
     </section>
   );

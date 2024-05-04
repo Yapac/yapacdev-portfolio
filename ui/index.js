@@ -3,8 +3,8 @@ import CarouselItem from "./CarouselItem";
 import SkillCard from "./SkillCard";
 import Navigation from "./Navigation";
 import Carousel from "./Carousel";
-import { Timeline } from "@/components";
 import HomeNavigation from "./HomeNavigation";
+import PrivacyButton from "./privacyButton";
 
 export {
   TimelineItem,
@@ -13,4 +13,5 @@ export {
   Navigation,
   Carousel,
   HomeNavigation,
+  PrivacyButton,
 };

@@ -1,5 +1,5 @@
 import TimelineComponent from "@/components/TimelineComponent";
-import "../../styles/AboutPage.css";
+import "./about.css";
 
 const About = () => {
   return (
