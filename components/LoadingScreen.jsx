@@ -7,7 +7,7 @@ export default function LoadingScreen() {
 
   return (
     <section id="loading-container" className={firstLoad ? " hidden" : ""}>
-      <div className="🤚">
+      <div className="🤚 hidden">
         <div className="👉"></div>
         <div className="👉"></div>
         <div className="👉"></div>

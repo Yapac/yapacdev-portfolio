@@ -1,20 +1,21 @@
 "use client";
 import useStore from "@/store/store";
 import TransitionLink from "./TransitionLink";
+import { usePathname } from "next/navigation";
 
 const Navigation = () => {
   const toggleMenu = useStore((state) => state.toggleMenu);
 
   return (
     <ul>
-      <li className="active">
+      <li className={usePathname() == "/" ? "active" : ""}>
         <TransitionLink className="navig-link" href="/" onClick={toggleMenu}>
           <span className="hoverable-rect" data-hover-text="Home">
             Home
           </span>
         </TransitionLink>
       </li>
-      <li>
+      <li className={usePathname() == "/about" ? "active" : ""}>
         <TransitionLink
           className="navig-link"
           href="/about"
@@ -25,7 +26,7 @@ const Navigation = () => {
           </span>
         </TransitionLink>
       </li>
-      <li>
+      <li className={usePathname() == "/contact" ? "active" : ""}>
         <TransitionLink
           className="navig-link"
           href="/contact"

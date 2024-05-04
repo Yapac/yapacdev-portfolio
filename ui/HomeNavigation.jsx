@@ -11,7 +11,6 @@ const HomeNavigation = () => {
   const pathname = usePathname();
   useEffect(() => {
     if (isCanvasLoaded && pathname == "/") {
-      console.log("na 4aya");
       const home = document.getElementById("home");
       const about = document.getElementById("about");
       const skills = document.getElementById("skills");
@@ -61,7 +60,7 @@ const HomeNavigation = () => {
           activeSection == "about" && "active-link"
         }`}
       >
-        <a
+        <p
           className="navig-link"
           onClick={() => setLocomotiveScroll.scrollTo("#about")}
         >
@@ -78,14 +77,14 @@ const HomeNavigation = () => {
             ></path>
           </svg>
           <span className="hoverable-rect">WHAT DO I OFFER</span>
-        </a>
+        </p>
       </li>
       <li
         className={`header-nav-link  ${
           activeSection == "skills" && "active-link"
         }`}
       >
-        <a
+        <p
           className="navig-link"
           onClick={() => setLocomotiveScroll.scrollTo("#skills")}
         >
@@ -102,14 +101,14 @@ const HomeNavigation = () => {
             ></path>
           </svg>
           <span className="hoverable-rect">My skills</span>
-        </a>
+        </p>
       </li>
       <li
         className={`header-nav-link  ${
           activeSection == "work" && "active-link"
         }`}
       >
-        <a
+        <p
           className="navig-link"
           onClick={() => setLocomotiveScroll.scrollTo("#work")}
         >
@@ -126,10 +125,10 @@ const HomeNavigation = () => {
             ></path>
           </svg>
           <span className="hoverable-rect">Work</span>
-        </a>
+        </p>
       </li>
       <li className="header-nav-link">
-        <a
+        <p
           className="navig-link"
           onClick={() => setLocomotiveScroll.scrollTo("#contact")}
         >
@@ -146,7 +145,7 @@ const HomeNavigation = () => {
             ></path>
           </svg>
           <span className="hoverable-rect">Contact</span>
-        </a>
+        </p>
       </li>
     </ul>
   );
