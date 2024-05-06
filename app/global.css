@@ -1414,18 +1414,18 @@ button,
 input {
   line-height: normal;
 }
-s .fs-anim-lower:-webkit-autofill,
+.fs-anim-lower:-webkit-autofill,
 .fs-anim-lower:-webkit-autofill:hover,
 .fs-anim-lower:-webkit-autofill:focus {
   -webkit-text-fill-color: rgba(255, 255, 255);
-  -webkit-box-shadow: 0 0 0px 1000px #363a41 inset;
+  -webkit-box-shadow: 0 0 0px 1000px #282828 inset;
 }
 
 .fs-form-overview .fs-fields input:-webkit-autofill,
 .fs-form-overview .fs-fields input:-webkit-autofill:hover,
 .fs-form-overview .fs-fields input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #363a41;
-  -webkit-box-shadow: 0 0 0px 1000px rgba(235, 235, 235) inset;
+  -webkit-text-fill-color: #757575;
+  -webkit-box-shadow: 0 0 0px 1000px #ebebeb inset;
 }
 
 /* Main form wrapper */
@@ -1798,13 +1798,14 @@ button.fs-continue,
   background-color: transparent;
   color: #fffed8;
   font-weight: 700;
-  font-size: 0.85em;
+  font-size: 0.9em;
   resize: none;
 }
 
 .fs-form-overview .fs-fields textarea {
   height: 100px;
   color: rgba(0, 0, 0, 0.5);
+  font-size: 1em;
 }
 
 .fs-fields textarea:focus {
@@ -2332,12 +2333,6 @@ input[type="text"]::-ms-clear {
 
 /*  */
 
-*,
-*:after,
-*:before {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
 .clearfix:before,
 .clearfix:after {
   content: "";
