@@ -1,5 +1,4 @@
 import { Contact } from "@/components";
-import "../../styles/AboutPage.css";
 
 const contact = () => {
   return (

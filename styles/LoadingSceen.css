@@ -74,6 +74,7 @@
 }
 .fadeOut {
   animation: animFadeOut 1.35s forwards 0.5s;
+  transform: translateY(0%);
 }
 
 @-webkit-keyframes animFadeOut {
