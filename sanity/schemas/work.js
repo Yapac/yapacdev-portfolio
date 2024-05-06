@@ -38,7 +38,7 @@ export const work = {
           { title: "Business website", value: "Business website" },
           { title: "Portfolio website", value: "Portfolio website" },
           { title: "Ecommerce website", value: "Ecommerce website" },
-          { title: "Nonprofil website", value: "Nonprofil website" },
+          { title: "Nonprofit website", value: "Nonprofit website" },
           { title: "Webgl experience", value: "Webgl experience" },
           { title: "Video game", value: "Video game" },
         ],
