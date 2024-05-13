@@ -15,14 +15,13 @@ const Cursor = () => {
       /* HOVERTABLE */
       const handleMouseOver = (e) => {
         e.preventDefault();
-
-        mountRef.current.classList.add("link-grow");
+        if (mountRef.current) mountRef.current.classList.add("link-grow");
       };
 
       const handleMouseLeave = (e) => {
         e.preventDefault();
 
-        mountRef.current.classList.remove("link-grow");
+        if (mountRef.current) mountRef.current.classList.remove("link-grow");
       };
 
       hoverables.forEach((hoverable) => {
@@ -34,11 +33,13 @@ const Cursor = () => {
       hoverablesRect.forEach((hoverable) => {
         hoverable.addEventListener("mouseover", (e) => {
           e.preventDefault();
-          mountRef.current.classList.add("link-grow-rect");
+          if (mountRef.current)
+            mountRef.current.classList.add("link-grow-rect");
         });
         hoverable.addEventListener("mouseleave", (e) => {
           e.preventDefault();
-          mountRef.current.classList.remove("link-grow-rect");
+          if (mountRef.current)
+            mountRef.current.classList.remove("link-grow-rect");
         });
       });
 
@@ -46,11 +47,13 @@ const Cursor = () => {
       hoverablesButton.forEach((hoverable) => {
         hoverable.addEventListener("mouseover", (e) => {
           e.preventDefault();
-          mountRef.current.classList.add("link-grow-button");
+          if (mountRef.current)
+            mountRef.current.classList.add("link-grow-button");
         });
         hoverable.addEventListener("mouseleave", (e) => {
           e.preventDefault();
-          mountRef.current.classList.remove("link-grow-button");
+          if (mountRef.current)
+            mountRef.current.classList.remove("link-grow-button");
         });
       });
     }, 1750);

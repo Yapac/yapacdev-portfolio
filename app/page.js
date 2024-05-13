@@ -4,6 +4,7 @@ import {
   MainCanvas,
   UpperCanvas,
   About,
+  Cursor,
 } from "@/components";
 
 import dynamic from "next/dynamic";
@@ -28,6 +29,8 @@ const Work = dynamic(() => import("@/components/Work"), {
 export default function Home() {
   return (
     <>
+      <Cursor />
+
       <LoadingScreen />
       <MainCanvas />
       <UpperCanvas />

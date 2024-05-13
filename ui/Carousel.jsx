@@ -3,28 +3,11 @@ import Slider from "react-slick";
 import { CarouselItem } from "@/ui";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
 export default function Carousel({ Data }) {
   const workRef = useRef(null);
-  useGSAP(() => {
-    gsap.to(workRef.current, {
-      scale: 0.75,
-      y: 100,
-      opacity: 0.5,
-      duration: 3,
-      delay: 0,
-      scrollTrigger: {
-        trigger: "#contact",
-        start: "top 100%",
-        end: "top 0%",
-        pin: workRef.current,
-        pinSpacing: false,
-        scrub: 1,
-      },
-    });
-  });
+
   function NextArrow(props) {
     const { className, onClick } = props;
 
