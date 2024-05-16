@@ -16,6 +16,7 @@ const MenuButton = () => {
   };
   return (
     <span
+      data-module-toggle-scroll="m2"
       className={`js-colorlib-nav-toggle colorlib-nav-toggle hoverable ${
         menuState ? "active" : ""
       }`}
