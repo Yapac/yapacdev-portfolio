@@ -20,16 +20,16 @@ const Work = dynamic(() => import("@/components/Work"), {
   ssr: false,
 });
 
-// export const metadata = {
-//   openGraph: {
-//     images: [
-//       {
-//         url: "https://yapacdev.com/opengraph-image.png",
-//         alt: "Opengraph image",
-//       },
-//     ],
-//   },
-// };
+export const metadata = {
+  openGraph: {
+    images: [
+      {
+        url: "https://yapacdev.com/opengraph-image.png",
+        alt: "Opengraph image",
+      },
+    ],
+  },
+};
 export default function Home() {
   return (
     <>
