@@ -16,16 +16,20 @@ const Contact = dynamic(() => import("@/components/Contact"), {
 const Skills = dynamic(() => import("@/components/Skills"), {
   ssr: false,
 });
-const TimelineComponent = dynamic(
-  () => import("@/components/TimelineComponent"),
-  {
-    ssr: false,
-  }
-);
 const Work = dynamic(() => import("@/components/Work"), {
   ssr: false,
 });
 
+// export const metadata = {
+//   openGraph: {
+//     images: [
+//       {
+//         url: "https://yapacdev.com/opengraph-image.png",
+//         alt: "Opengraph image",
+//       },
+//     ],
+//   },
+// };
 export default function Home() {
   return (
     <>
@@ -37,7 +41,6 @@ export default function Home() {
       <Hero />
 
       <About />
-      {/* <TimelineComponent /> */}
       <Skills />
       <Work />
 
