@@ -8,6 +8,8 @@ export const metadata = {
     "My name is Yassine El atlassi, i am a skilled Developer proficient in both front-end and back-end technologies, along with a solid design and 3D modeling foundation... ",
 };
 
+export const revalidate = 3600;
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

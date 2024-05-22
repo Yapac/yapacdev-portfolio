@@ -10,8 +10,6 @@ async function getWork() {
   return data;
 }
 
-export const revalidate = 3600;
-
 export default async function Work() {
   const builder = imageUrlBuilder(client);
   function urlFor(source) {

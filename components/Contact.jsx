@@ -663,25 +663,11 @@ export default function Contact() {
         <form
           id="myform"
           className="fs-form fs-form-full"
-          action="https://formsubmit.co/yassinelatlassi@gmail.com"
+          data-netlify="true"
+          name="contact-form"
           method="POST"
         >
-          {/* <!-- Honeypot --> */}
-          <input type="text" name="_honey" style={{ display: "none" }} />
-
-          {/* <!-- Disable chaptcha --> */}
-          <input type="hidden" name="_captcha" value="true" />
-
-          {/* <!-- Success page --> */}
-          <input
-            type="hidden"
-            name="_next"
-            value="https://yapacdev.com/?success=true"
-          />
-
-          {/* <!-- Template --> */}
-          <input type="hidden" name="_template" value="basic" />
-
+          <input type="hidden" name="form-name" value="contact-form" />
           {/* <!-- Form --> */}
           <ol className="fs-fields">
             <li className="fs-current">
