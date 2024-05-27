@@ -1,5 +1,9 @@
 import { Contact, Cursor } from "@/components";
 
+export const metadata = {
+  title: "Get in touch",
+};
+
 const contact = () => {
   return (
     <>

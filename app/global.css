@@ -212,7 +212,7 @@ canvas {
   justify-content: space-between;
 }
 
-.titleWrapper h2 {
+.titleWrapper section {
   line-height: 1;
   text-transform: capitalize;
   font-weight: 800;

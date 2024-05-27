@@ -49,8 +49,8 @@ export default function Hero() {
             priority
           />
         </div>
-        <div className="titleWrapper">
-          <h2 className="">
+        <h1 className="titleWrapper">
+          <section className="">
             <div className="title-word">
               <span className="title-anim">Transforming</span>
             </div>
@@ -58,8 +58,8 @@ export default function Hero() {
             <div className="pe-8 title-word">
               <span className="title-anim">ideas</span>
             </div>
-          </h2>
-          <h2 className="relative">
+          </section>
+          <section className="relative">
             <div className="ps-2 title-word">
               <span className="title-anim">into</span>
             </div>
@@ -68,8 +68,8 @@ export default function Hero() {
               <div className="title-label">DIGITAL</div>
               <span className="title-anim">Masterpieces</span>
             </div>
-          </h2>
-        </div>
+          </section>
+        </h1>
         <p className="landing-paragraph">
           "Crafting Digital Experiences: Tech mastery, <br />
           Problem Solving, and Creative Web Solutions"
